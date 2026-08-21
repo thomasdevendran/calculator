@@ -4,78 +4,138 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Complete 4x4 Quote Builder</title>
 <style>
-:root{--bg:#f4f5f7;--line:#dde2e8;--dark:#111318;--muted:#6b7280;--yellow:#f0df00;--good:#167343}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#17191d}header{background:var(--dark);color:#fff;padding:18px 28px;font-weight:900;position:sticky;top:0;z-index:5}header span{color:var(--yellow)}.app{max-width:1600px;margin:auto;padding:24px;display:grid;grid-template-columns:minmax(400px,520px) 1fr;gap:24px}.panel,.preview{background:#fff;border:1px solid var(--line);border-radius:16px}.panel{padding:22px}.preview{align-self:start;position:sticky;top:82px;overflow:hidden}.section{border-top:1px solid var(--line);padding-top:18px;margin-top:18px}.section:first-of-type{border:0;margin-top:0;padding-top:0}.title{font-size:.8rem;text-transform:uppercase;color:var(--muted);font-weight:900;letter-spacing:.08em;margin-bottom:12px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}label{display:block;font-size:.76rem;font-weight:800;margin-bottom:6px}input,textarea,select{width:100%;padding:10px;border:1px solid #ccd2d9;border-radius:9px;font:inherit}textarea{min-height:80px}.hint{font-size:.74rem;color:var(--muted);line-height:1.4;margin-top:6px}.btn{border:0;border-radius:9px;padding:10px 13px;font-weight:800;cursor:pointer}.primary{background:var(--yellow)}.secondary{background:#eceff2}.danger{background:#fff1ef;color:#9b3427}.outline{background:#fff;border:1px solid #cbd1d8}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.savebox{background:#fafbfc;border:1px solid var(--line);border-radius:12px;padding:12px;margin:0 0 18px}.save-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:end}.save-status{font-size:.74rem;color:var(--good);font-weight:800;margin-top:7px;min-height:16px}.item{border:1px solid var(--line);border-radius:13px;margin-top:14px;overflow:hidden}.item-head{background:#f7f8fa;padding:10px 12px;display:flex;justify-content:space-between;align-items:center}.item-body{padding:14px}.sub{border-top:1px solid #e7eaee;margin-top:15px;padding-top:14px}.sub h4{margin:0 0 8px;font-size:.82rem}.extra-row{display:grid;grid-template-columns:minmax(0,1fr) 60px 100px 105px 38px;gap:7px;align-items:end;margin-top:8px;padding:8px;background:#fafbfc;border:1px solid var(--line);border-radius:9px}.mini{font-size:.67rem;color:var(--muted);font-weight:800;margin-bottom:4px}.readonly{background:#eef1f4}.calc{margin-top:12px;background:var(--dark);color:#fff;border-radius:10px;padding:12px;display:grid;grid-template-columns:1fr auto;gap:6px 12px}.calc .total{font-weight:900;border-top:1px solid #383c44;padding-top:8px}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:8px}.gallery img{width:100%;height:70px;object-fit:cover;border-radius:7px}.quote-head{background:var(--dark);color:#fff;padding:26px 30px;display:flex;justify-content:space-between;gap:20px}.quote-head b span{color:var(--yellow)}.quote-ref{text-align:right;font-size:.78rem;line-height:1.45}.quote-body{padding:28px 32px}.vehicle{font-size:1.55rem;font-weight:900;margin:5px 0 8px}.quote-meta{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.8rem;margin-bottom:18px}.quote-meta strong{color:#32363d}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{background:#eef0f2;border-radius:999px;padding:6px 9px;font-size:.75rem;font-weight:800}.product{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-top:18px}.product .pics{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#eee}.product .pics img{width:100%;height:210px;object-fit:cover}.pc{padding:18px}.desc{line-height:1.5}.features{padding-left:18px}.table{margin-top:16px;border-top:1px solid var(--line)}.tr,.th{display:grid;grid-template-columns:1fr 60px 115px;gap:10px;padding:10px 0;border-top:1px solid #edf0f2;align-items:center}.th{border-top:0;color:var(--muted);font-size:.7rem;font-weight:900;text-transform:uppercase}.amt{text-align:right;font-weight:800}.qty{text-align:center}.fit{display:flex;justify-content:space-between;border-top:2px solid #dfe3e8;padding-top:13px;margin-top:5px;font-size:1.12rem;font-weight:900}.grand{margin-top:22px;background:var(--dark);color:#fff;padding:16px 18px;border-radius:12px;display:flex;justify-content:space-between;font-weight:900}.email{margin-top:22px;padding:16px;background:#fafbfc;border:1px solid var(--line);border-radius:10px;white-space:pre-wrap;line-height:1.5;font-size:.88rem}.internal{color:#8a4b00;font-weight:800}.empty{color:var(--muted);font-size:.78rem;border:1px dashed #ccd2d9;padding:9px;border-radius:8px;margin-top:8px}
-@media(max-width:1050px){.app{grid-template-columns:1fr}.preview{position:static}}@media(max-width:700px){.grid2,.grid3{grid-template-columns:1fr}.save-row{grid-template-columns:1fr}.extra-row{grid-template-columns:1fr 55px 85px 90px 36px}.app{padding:10px}.quote-body{padding:20px 16px}}@media print{header,.panel{display:none!important}.app{display:block;padding:0}.preview{position:static;border:0}.email{display:none}.product{break-inside:auto}.tr,.fit{break-inside:avoid}@page{margin:12mm}}
+:root{--bg:#f2f4f6;--surface:#fff;--soft:#f8f9fb;--line:#dce1e7;--dark:#111318;--muted:#68707c;--yellow:#f0df00;--yellow-dark:#d2c300;--good:#167343;--warning:#875200;--shadow:0 16px 42px rgba(17,19,24,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#17191d}body.preview-open{overflow:hidden}
+.app-header{background:var(--dark);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 4px 18px rgba(0,0,0,.18)}.header-inner{max-width:1760px;margin:auto;padding:14px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{font-weight:900;letter-spacing:.02em}.brand span{color:var(--yellow)}.brand small{display:block;margin-top:3px;color:#aeb4bd;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.app{max-width:1760px;margin:auto;padding:28px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:26px;align-items:start}.workspace{min-width:0}.sidebar{position:sticky;top:94px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 28px rgba(17,19,24,.05);max-height:calc(100vh - 118px);overflow:auto}.sidebar-title{font-size:.72rem;text-transform:uppercase;color:var(--muted);font-weight:900;letter-spacing:.1em;margin-bottom:12px}.section-nav{display:flex;flex-direction:column;gap:4px}.section-nav a{display:block;color:#30343a;text-decoration:none;font-size:.88rem;font-weight:800;padding:9px 10px;border-radius:9px;line-height:1.25}.section-nav a:hover,.section-nav a.active{background:#f3f0bf;color:#111318}.nav-product{border-top:1px solid var(--line);margin-top:8px;padding-top:8px}.nav-product-title{font-size:.7rem;color:var(--muted);font-weight:900;text-transform:uppercase;padding:7px 10px 3px}.section-nav .nav-sub{font-size:.8rem;font-weight:700;padding:7px 10px 7px 18px}.sidebar-hint{border-top:1px solid var(--line);margin-top:14px;padding-top:14px;color:var(--muted);font-size:.76rem;line-height:1.5}
+.workspace-head,.form-section{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 28px rgba(17,19,24,.045)}.workspace-head{padding:26px 30px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.workspace-head h1{font-size:1.75rem;margin:4px 0 8px}.workspace-head p{margin:0;color:var(--muted);line-height:1.55;max-width:760px}.eyebrow,.title{font-size:.72rem;text-transform:uppercase;color:var(--muted);font-weight:900;letter-spacing:.1em}.form-section{padding:28px 30px;margin-bottom:18px;scroll-margin-top:92px}.section-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}.section-heading h2{font-size:1.25rem;margin:4px 0 0}.section-heading p{margin:5px 0 0;color:var(--muted);font-size:.86rem;line-height:1.5}.section-number{color:#a4aab3;font-size:.8rem;font-weight:900}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 20px}label{display:block;font-size:.82rem;font-weight:800;margin-bottom:8px;color:#2f3339}input,textarea,select{width:100%;min-height:48px;padding:12px 14px;border:1px solid #c9d0d8;border-radius:10px;background:#fff;color:#17191d;font:inherit;font-size:1rem;line-height:1.4;transition:border-color .15s,box-shadow .15s}input:focus,textarea:focus,select:focus{outline:none;border-color:#8f8700;box-shadow:0 0 0 3px rgba(240,223,0,.2)}textarea{min-height:126px;resize:vertical}.hint{font-size:.79rem;color:var(--muted);line-height:1.5;margin-top:8px}.internal{display:inline-flex;align-items:center;background:#fff3d7;color:var(--warning);border-radius:999px;padding:2px 7px;font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.internal-note{margin-top:12px;padding:12px 14px;border-left:4px solid #e0b000;border-radius:8px;background:#fff9e8;color:#654800;font-size:.82rem;line-height:1.5}
+.btn{border:0;border-radius:10px;min-height:42px;padding:10px 15px;font-weight:800;font-size:.88rem;cursor:pointer;transition:transform .12s,background .12s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--yellow);color:#111318}.primary:hover{background:var(--yellow-dark)}.secondary{background:#eceff2;color:#252930}.danger{background:#fff1ef;color:#9b3427}.outline{background:#fff;border:1px solid #cbd1d8;color:#252930}.dark-btn{background:#24272d;color:#fff}.header-preview{min-height:40px;padding:9px 15px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.savebox{background:var(--soft);border:1px solid var(--line);border-radius:13px;padding:18px}.save-row{display:grid;grid-template-columns:minmax(280px,1fr) auto auto;gap:10px;align-items:end}.save-status{font-size:.78rem;color:var(--good);font-weight:800;margin-top:9px;min-height:18px}
+.item{border:1px solid #cfd5dc;border-radius:16px;margin-top:20px;overflow:hidden;background:#fff;scroll-margin-top:92px}.item:first-child{margin-top:0}.item-head{background:#202329;color:#fff;padding:15px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px}.item-head-meta{display:flex;align-items:center;gap:10px}.item-chip{background:var(--yellow);color:#111318;border-radius:999px;padding:4px 8px;font-size:.7rem;font-weight:900}.item-body{padding:0 22px 24px}.item-section{padding:24px 2px;border-top:1px solid #e4e8ed;scroll-margin-top:92px}.item-section:first-child{border-top:0}.subheading{margin-bottom:18px}.subheading h3{font-size:1.02rem;margin:0 0 5px}.subheading p{font-size:.8rem;color:var(--muted);line-height:1.45;margin:0}.upload-box{display:block;border:2px dashed #c5cbd3;border-radius:13px;padding:20px;background:var(--soft);cursor:pointer}.upload-box:hover{border-color:#989000;background:#fffef0}.upload-title{display:block;font-size:.95rem;font-weight:900;margin-bottom:4px}.upload-box input{margin-top:14px;background:#fff}.extra-row{display:grid;grid-template-columns:minmax(260px,1fr) 80px 135px 135px 44px;gap:10px;align-items:end;margin-top:10px;padding:12px;background:var(--soft);border:1px solid var(--line);border-radius:11px}.mini{font-size:.7rem;color:var(--muted);font-weight:900;margin-bottom:6px}.readonly{background:#eef1f4}.calc{margin-top:16px;background:var(--dark);color:#fff;border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:9px 16px}.calc .total{font-weight:900;border-top:1px solid #3c4149;padding-top:11px;margin-top:2px}.build-total{font-size:1.05rem}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}.gallery img{width:100%;height:130px;object-fit:cover;border-radius:9px;border:1px solid var(--line)}.empty{color:var(--muted);font-size:.82rem;border:1px dashed #c6cdd5;padding:13px;border-radius:9px;margin-top:10px}
+.preview-modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(9,11,14,.82);overflow:auto;padding:24px}.preview-modal.open{display:block}.preview-shell{width:min(980px,100%);margin:auto}.preview-toolbar{position:sticky;top:0;z-index:3;background:#fff;border-radius:14px;margin-bottom:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:var(--shadow)}.preview-toolbar strong{display:block}.preview-toolbar small{color:var(--muted)}.preview-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.preview{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}.quote-head{background:var(--dark);color:#fff;padding:26px 30px;display:flex;justify-content:space-between;gap:20px}.quote-head b span{color:var(--yellow)}.quote-ref{text-align:right;font-size:.78rem;line-height:1.45}.quote-body{padding:28px 32px}.vehicle{font-size:1.55rem;font-weight:900;margin:5px 0 18px}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{background:#eef0f2;border-radius:999px;padding:6px 9px;font-size:.75rem;font-weight:800}.product{border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-top:18px}.product .pics{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#eee}.product .pics img{width:100%;height:210px;object-fit:cover}.pc{padding:18px}.desc{line-height:1.5}.features{padding-left:18px}.table{margin-top:16px;border-top:1px solid var(--line)}.tr,.th{display:grid;grid-template-columns:1fr 60px 115px;gap:10px;padding:10px 0;border-top:1px solid #edf0f2;align-items:center}.th{border-top:0;color:var(--muted);font-size:.7rem;font-weight:900;text-transform:uppercase}.amt{text-align:right;font-weight:800}.qty{text-align:center}.fit{display:flex;justify-content:space-between;border-top:2px solid #dfe3e8;padding-top:13px;margin-top:5px;font-size:1.12rem;font-weight:900}.grand{margin-top:22px;background:var(--dark);color:#fff;padding:16px 18px;border-radius:12px;display:flex;justify-content:space-between;font-weight:900}.email-panel{margin:14px 0 40px;background:#fff;border-radius:13px;padding:16px 18px;box-shadow:var(--shadow)}.email-panel summary{font-weight:900;cursor:pointer}.email{margin-top:14px;padding:16px;background:var(--soft);border:1px solid var(--line);border-radius:10px;white-space:pre-wrap;line-height:1.5;font-size:.88rem}
+@media(max-width:1050px){.app{grid-template-columns:205px minmax(0,1fr);padding:20px;gap:18px}.form-section,.workspace-head{padding:24px}.extra-row{grid-template-columns:minmax(210px,1fr) 70px 115px 115px 42px}}
+@media(max-width:820px){.header-inner{padding:12px 16px}.app{grid-template-columns:1fr;padding:14px}.sidebar{position:static;max-height:none}.section-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.nav-product{display:none}.sidebar-hint{display:none}.workspace-head{padding:22px}.grid2,.grid3{grid-template-columns:1fr}.save-row{grid-template-columns:1fr auto auto}.extra-row{grid-template-columns:1fr 1fr}.extra-row>div:first-child{grid-column:1/-1}.extra-row .removeX{grid-column:2;justify-self:end}.preview-modal{padding:10px}.preview-toolbar{align-items:flex-start}.preview-actions{justify-content:flex-start}.quote-body{padding:22px 18px}}
+@media(max-width:560px){.header-preview{font-size:.78rem}.app{padding:9px}.workspace-head,.form-section{padding:19px 16px;border-radius:14px}.workspace-head{display:block}.section-nav{grid-template-columns:1fr}.save-row{grid-template-columns:1fr}.item-body{padding:0 14px 18px}.item-head{padding:13px}.preview-toolbar{position:static;display:block}.preview-actions{margin-top:10px}.quote-head{padding:22px 18px}.tr,.th{grid-template-columns:1fr 44px 95px}.product .pics img{height:160px}}
+@media print{body{background:#fff}.app-header,.app,.preview-toolbar,.email-panel{display:none!important}.preview-modal{display:block!important;position:static!important;background:none!important;padding:0!important;overflow:visible!important}.preview-shell{width:auto!important;max-width:none!important;margin:0!important}.preview{display:block!important;border:0!important;border-radius:0!important;box-shadow:none!important}.product{break-inside:auto}.tr,.fit{break-inside:avoid}@page{margin:12mm}}
 </style>
 </head>
 <body>
-<header>COMPLETE <span>4X4</span> · Quote Builder</header>
+<header class="app-header"><div class="header-inner">
+  <div class="brand">COMPLETE <span>4X4</span> · Quote Builder<small>Internal quoting workspace</small></div>
+  <button class="btn primary header-preview" id="openPreview" type="button">Preview customer quote</button>
+</div></header>
 <div class="app">
-<section class="panel">
-<h2 style="margin-top:0">Build a customer quote</h2>
+<aside class="sidebar" aria-label="Quote input sections">
+  <div class="sidebar-title">Jump to a section</div>
+  <nav class="section-nav" id="sectionNav">
+    <a href="#saved-section">Saved quotes</a>
+    <a href="#customer-section">Customer details</a>
+    <a href="#vehicle-section">Vehicle & internal records</a>
+    <a href="#requested-section">Requested products</a>
+    <a href="#products-section">Products & packages</a>
+    <div id="productNav"></div>
+    <a href="#totals-section">Quote total & review</a>
+  </nav>
+  <div class="sidebar-hint">Complete sections in any order. You can jump straight to pictures, pricing, required items, or customer details at any time.</div>
+</aside>
 
-<div class="savebox">
-  <div class="title" style="margin-bottom:8px">Saved quotes · this browser</div>
-  <div class="save-row">
-    <div><label>Saved quote</label><select id="savedQuotes"><option value="">No saved quote selected</option></select></div>
-    <button class="btn secondary" id="loadQuote" type="button">Load</button>
-    <button class="btn danger" id="deleteQuote" type="button">Delete</button>
-  </div>
-  <div class="actions">
-    <button class="btn primary" id="saveQuote" type="button">Save Quote</button>
-    <button class="btn outline" id="newQuote" type="button">New Quote</button>
-  </div>
-  <div class="hint">Saved quotes stay on this computer and browser. Use Job No. as the quote reference.</div>
-  <div class="save-status" id="saveStatus"></div>
+<main class="workspace">
+  <section class="workspace-head">
+    <div><div class="eyebrow">Customer quote workspace</div><h1>Build a customer quote</h1><p>Enter the information in whatever order suits the job. The customer-facing quote stays out of the way until you choose to preview it.</p></div>
+  </section>
+
+  <section class="form-section" id="saved-section">
+    <div class="section-heading"><div><div class="title">Quote management</div><h2>Saved quotes</h2><p>Open an existing job or save the quote you are currently preparing.</p></div><span class="section-number">01</span></div>
+    <div class="savebox">
+      <div class="save-row">
+        <div><label>Saved quote</label><select id="savedQuotes"><option value="">No saved quote selected</option></select></div>
+        <button class="btn secondary" id="loadQuote" type="button">Load</button>
+        <button class="btn danger" id="deleteQuote" type="button">Delete</button>
+      </div>
+      <div class="actions"><button class="btn primary" id="saveQuote" type="button">Save quote</button><button class="btn outline" id="newQuote" type="button">New quote</button></div>
+      <div class="hint">Saved quotes stay on this computer and browser. Use Job No. as the quote reference.</div>
+      <div class="save-status" id="saveStatus"></div>
+    </div>
+  </section>
+
+  <section class="form-section" id="customer-section">
+    <div class="section-heading"><div><div class="title">Customer & quote</div><h2>Customer details</h2><p>Record who the quote is for and the date and job reference.</p></div><span class="section-number">02</span></div>
+    <div class="grid2">
+      <div><label>First name</label><input id="first" value="John" autocomplete="given-name"></div>
+      <div><label>Surname</label><input id="surname" autocomplete="family-name"></div>
+      <div><label>Quote date</label><input id="quoteDate" type="date"></div>
+      <div><label>Job No.</label><input id="jobNo" placeholder="e.g. J24081"></div>
+    </div>
+    <div class="hint">The quote date can be changed manually. Job No. is used as the saved quote reference.</div>
+  </section>
+
+  <section class="form-section" id="vehicle-section">
+    <div class="section-heading"><div><div class="title">Vehicle & workshop records</div><h2>Vehicle details</h2><p>Capture the vehicle information needed to confirm fitment and order the correct parts.</p></div><span class="section-number">03</span></div>
+    <div class="grid2">
+      <div><label>Rego No. <span class="internal">Internal only</span></label><input id="rego" placeholder="Vehicle registration"></div>
+      <div><label>Year</label><input id="year" value="2024"></div>
+      <div><label>Make</label><input id="make" value="Ford"></div>
+      <div><label>Model</label><input id="model" value="Ranger"></div>
+      <div><label>Variant</label><input id="variant" value="Wildtrak"></div>
+      <div><label>Labour rate / hour <span class="internal">Internal only</span></label><input id="labour" type="number" min="0" step=".01" value="165"></div>
+    </div>
+    <div class="internal-note"><strong>Rego is for workshop records only.</strong> Use it to check VicRoads for the VIN and confirm the precise parts required. It is saved with the job but never shown on the customer quote or email.</div>
+  </section>
+
+  <section class="form-section" id="requested-section">
+    <div class="section-heading"><div><div class="title">Customer request</div><h2>Requested products</h2><p>List what the customer has asked about so it is easy to match each product or package below.</p></div><span class="section-number">04</span></div>
+    <label>Requested products · one per line</label><textarea id="requested">Bull Bar
+Snorkel</textarea>
+  </section>
+
+  <section class="form-section" id="products-section">
+    <div class="section-heading"><div><div class="title">Quote content</div><h2>Products & packages</h2><p>Add product details, descriptions, features, pictures, pricing, freight, installation, and required items.</p></div><span class="section-number">05</span></div>
+    <div id="items"></div>
+    <div class="actions"><button class="btn primary" id="addItem" type="button">+ Add product / package</button></div>
+  </section>
+
+  <section class="form-section" id="totals-section">
+    <div class="section-heading"><div><div class="title">Review</div><h2>Quote total</h2><p>Review the included total, then open the customer view before printing or saving the PDF.</p></div><span class="section-number">06</span></div>
+    <div class="calc build-total"><span>Included quote total</span><strong id="buildGrand">$0.00</strong></div>
+    <div class="actions"><button class="btn primary" id="openPreviewBottom" type="button">Preview customer quote</button><button class="btn secondary" id="copyEmail" type="button">Copy email reply</button></div>
+  </section>
+</main>
 </div>
 
-<div class="section"><div class="title">1 · Customer & vehicle</div><div class="grid2">
-<div><label>First name</label><input id="first" value="John"></div>
-<div><label>Surname</label><input id="surname"></div>
-<div><label>Quote date</label><input id="quoteDate" type="date"></div>
-<div><label>Job No.</label><input id="jobNo" placeholder="e.g. J24081"></div>
-<div><label>Rego No.</label><input id="rego" placeholder="Vehicle registration"></div>
-<div><label>Year</label><input id="year" value="2024"></div>
-<div><label>Make</label><input id="make" value="Ford"></div>
-<div><label>Model</label><input id="model" value="Ranger"></div>
-<div><label>Variant</label><input id="variant" value="Wildtrak"></div>
-<div><label>Labour rate / hour <span class="internal">internal</span></label><input id="labour" type="number" value="165"></div>
-</div><div class="hint">Quote date can be changed manually. Installation hours remain internal; the customer only sees the installation price.</div></div>
-
-<div class="section"><div class="title">2 · Requested products</div><label>One per line</label><textarea id="requested">Bull Bar
-Snorkel</textarea></div>
-
-<div class="section"><div class="title">3 · Products / packages</div><div id="items"></div><div class="actions"><button class="btn primary" id="addItem">+ Add product / package</button></div><div class="calc"><span>Included quote total</span><strong id="buildGrand">$0.00</strong></div></div>
-
-<div class="actions"><button class="btn primary" id="copyEmail">Copy email reply</button><button class="btn secondary" onclick="window.print()">Print / Save PDF</button></div>
-</section>
-
-<section class="preview">
-<div class="quote-head"><b>COMPLETE <span>4X4</span></b><div class="quote-ref">VEHICLE UPGRADE QUOTE<br><span id="pDate"></span><br><span id="pJob"></span></div></div>
-<div class="quote-body">
-<div style="font-size:.72rem;color:#6b7280;font-weight:900">PREPARED FOR <span id="pName"></span></div>
-<div class="vehicle" id="pVehicle"></div>
-<div class="quote-meta"><span id="pRegoWrap">Rego: <strong id="pRego"></strong></span></div>
-<div class="chips" id="pRequested"></div>
-<div id="quoteItems"></div>
-<div class="grand"><span>Total fitted · included items</span><span id="pGrand">$0.00</span></div>
-<div class="email" id="email"></div>
-</div></section>
+<div class="preview-modal" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="previewTitle" aria-hidden="true">
+  <div class="preview-shell">
+    <div class="preview-toolbar">
+      <div><strong id="previewTitle">Customer quote preview</strong><small>Only the content below will appear in the PDF.</small></div>
+      <div class="preview-actions"><button class="btn primary" id="printQuote" type="button">Print / Save PDF</button><button class="btn secondary" id="copyEmailPreview" type="button">Copy email reply</button><button class="btn outline" id="closePreview" type="button">Close preview</button></div>
+    </div>
+    <section class="preview" id="quotePreview">
+      <div class="quote-head"><b>COMPLETE <span>4X4</span></b><div class="quote-ref">VEHICLE UPGRADE QUOTE<br><span id="pDate"></span><br><span id="pJob"></span></div></div>
+      <div class="quote-body">
+        <div style="font-size:.72rem;color:#6b7280;font-weight:900">PREPARED FOR <span id="pName"></span></div>
+        <div class="vehicle" id="pVehicle"></div>
+        <div class="chips" id="pRequested"></div>
+        <div id="quoteItems"></div>
+        <div class="grand"><span>Total fitted · included items</span><span id="pGrand">$0.00</span></div>
+      </div>
+    </section>
+    <details class="email-panel"><summary>Email wording · not included in PDF</summary><div class="email" id="email"></div></details>
+  </div>
 </div>
 
-<template id="itemTpl"><div class="item"><div class="item-head"><b class="itemNo">Quote item</b><button class="btn danger removeItem">Remove</button></div><div class="item-body">
-<div class="grid2"><div><label>Requested item / category</label><input data-f="category"></div><div><label>Use as</label><select data-f="role"><option value="included">Included in main quote</option><option value="alternative">Alternative option</option></select></div><div><label>Brand</label><input data-f="brand"></div><div><label>Product / package name</label><input data-f="product"></div><div><label>SKU / Part No.</label><input data-f="sku"></div><div><label>Availability</label><select data-f="stock"><option>Check stock</option><option>In stock</option><option>Low stock</option><option>Out of stock</option><option>Order required</option></select></div></div>
-<div style="margin-top:10px"><label>Compatibility</label><input data-f="compat"></div><div style="margin-top:10px"><label>Description</label><textarea data-f="desc"></textarea></div><div style="margin-top:10px"><label>Features / notes · one per line</label><textarea data-f="features"></textarea></div>
-<div class="sub"><h4>Product pictures</h4><input class="images" type="file" accept="image/*" multiple><div class="gallery editGallery"></div></div>
-<div class="sub"><h4>Main product, freight & installation</h4><div class="grid2"><div><label>Main product retail</label><input data-f="retail" type="number" min="0" step=".01"></div><div><label>Freight for this main item / package</label><input data-f="freight" type="number" min="0" step=".01"></div><div><label>Recommended install hours <span class="internal">internal</span></label><input data-f="hours" type="number" min="0" step=".25"></div><div><label>Installation price override</label><input data-f="installOverride" type="number" min="0" step=".01" placeholder="Auto"></div></div><div class="hint">Freight is entered once here for the main product/package, not against every required item.</div></div>
-<div class="sub"><h4>Required / additional items</h4><div class="hint">Enter Qty and Unit Price. Line Total is automatic. Example: 2 × $100 = $200.</div><div class="extras"></div><div class="actions"><button class="btn secondary addExtra">+ Add required item</button></div></div>
-<div class="calc"><span>Main product</span><span data-c="retail">$0.00</span><span>Required items</span><span data-c="extras">$0.00</span><span>Freight</span><span data-c="freight">$0.00</span><span>Installation</span><span data-c="install">$0.00</span><span class="total">Total fitted</span><span class="total" data-c="total">$0.00</span></div>
+<template id="itemTpl"><div class="item"><div class="item-head"><div class="item-head-meta"><span class="item-chip">PRODUCT</span><b class="itemNo">Quote item</b></div><button class="btn danger removeItem" type="button">Remove</button></div><div class="item-body">
+<div class="item-section" data-anchor="details"><div class="subheading"><h3>Product details</h3><p>Identify the product or package and how it should be included in the quote.</p></div><div class="grid2"><div><label>Requested item / category</label><input data-f="category"></div><div><label>Use as</label><select data-f="role"><option value="included">Included in main quote</option><option value="alternative">Alternative option</option></select></div><div><label>Brand</label><input data-f="brand"></div><div><label>Product / package name</label><input data-f="product"></div><div><label>SKU / Part No.</label><input data-f="sku"></div><div><label>Availability</label><select data-f="stock"><option>Check stock</option><option>In stock</option><option>Low stock</option><option>Out of stock</option><option>Order required</option></select></div></div></div>
+<div class="item-section" data-anchor="description"><div class="subheading"><h3>Description & features</h3><p>Add the fitment details and customer-facing information that explains the product clearly.</p></div><div><label>Compatibility</label><input data-f="compat"></div><div style="margin-top:18px"><label>Description</label><textarea data-f="desc"></textarea></div><div style="margin-top:18px"><label>Features / notes · one per line</label><textarea data-f="features"></textarea></div></div>
+<div class="item-section" data-anchor="images"><div class="subheading"><h3>Product pictures</h3><p>Upload one or more pictures. Images are compressed before the quote is saved in this browser.</p></div><label class="upload-box"><span class="upload-title">Choose product pictures</span><span class="hint">Select multiple images if needed. They will appear in the customer quote preview.</span><input class="images" type="file" accept="image/*" multiple></label><div class="gallery editGallery"></div></div>
+<div class="item-section" data-anchor="pricing"><div class="subheading"><h3>Product, freight & installation</h3><p>Enter the main retail price and any freight or installation charges for this package.</p></div><div class="grid2"><div><label>Main product retail</label><input data-f="retail" type="number" min="0" step=".01"></div><div><label>Freight for this main item / package</label><input data-f="freight" type="number" min="0" step=".01"></div><div><label>Recommended install hours <span class="internal">Internal only</span></label><input data-f="hours" type="number" min="0" step=".25"></div><div><label>Installation price override</label><input data-f="installOverride" type="number" min="0" step=".01" placeholder="Calculated automatically"></div></div><div class="hint">Freight is entered once for the main product or package. Installation hours remain internal; customers only see the installation price.</div></div>
+<div class="item-section" data-anchor="required"><div class="subheading"><h3>Required / additional items</h3><p>Add every component needed to complete this product or package.</p></div><div class="hint">Enter Qty and Unit Price. Line Total is automatic. Example: 2 × $100 = $200.</div><div class="extras"></div><div class="actions"><button class="btn secondary addExtra" type="button">+ Add required item</button></div></div>
+<div class="item-section" data-anchor="summary"><div class="subheading"><h3>Item total</h3><p>Calculated from the main product, required items, freight, and installation.</p></div><div class="calc"><span>Main product</span><span data-c="retail">$0.00</span><span>Required items</span><span data-c="extras">$0.00</span><span>Freight</span><span data-c="freight">$0.00</span><span>Installation</span><span data-c="install">$0.00</span><span class="total">Total fitted</span><span class="total" data-c="total">$0.00</span></div></div>
 </div></div></template>
 
 <script>
 const $=id=>document.getElementById(id),money=n=>new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(Number(n||0));
 const STORAGE_KEY='complete4x4_saved_quotes_v1';
 let count=0;
+let sectionObserver=null,previewReturnFocus=null;
 
 function todayLocal(){const d=new Date(),off=d.getTimezoneOffset();return new Date(d.getTime()-off*60000).toISOString().slice(0,10)}
 function displayDate(v){if(!v)return'';const [y,m,d]=v.split('-').map(Number);return new Date(y,m-1,d).toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})}
@@ -85,6 +145,25 @@ function name(){return[$('first').value.trim(),$('surname').value.trim()].filter
 function req(){return $('requested').value.split(/\n|,/).map(x=>x.trim()).filter(Boolean)}
 function qty(n){return Number.isInteger(Number(n))?String(Number(n)):String(Number(n).toFixed(2))}
 function vehicleText(){return[$('year').value,$('make').value,$('model').value,$('variant').value].map(x=>x.trim()).filter(Boolean).join(' ')}
+
+function renderProductNav(){
+  const cards=[...document.querySelectorAll('.item')];
+  $('productNav').innerHTML=cards.map((card,i)=>{
+    const n=i+1;
+    return`<div class="nav-product"><div class="nav-product-title" id="nav-product-label-${n}">Item ${n}</div><a class="nav-sub" href="#item-${n}-details">Product details</a><a class="nav-sub" href="#item-${n}-description">Description & features</a><a class="nav-sub" href="#item-${n}-images">Pictures</a><a class="nav-sub" href="#item-${n}-pricing">Pricing & installation</a><a class="nav-sub" href="#item-${n}-required">Required items</a><a class="nav-sub" href="#item-${n}-summary">Item total</a></div>`
+  }).join('');
+  setupSectionObserver();refreshProductNavLabels(cards)
+}
+function refreshProductNavLabels(cards=[...document.querySelectorAll('.item')]){
+  cards.forEach((card,i)=>{const n=i+1,node=$(`nav-product-label-${n}`),label=val(card,'product')||val(card,'category')||`Item ${n}`;if(node)node.textContent=`${n} · ${label}`})
+}
+function setupSectionObserver(){
+  if(!('IntersectionObserver'in window))return;
+  if(sectionObserver)sectionObserver.disconnect();
+  const links=[...document.querySelectorAll('#sectionNav a[href^="#"]')],targets=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  sectionObserver=new IntersectionObserver(entries=>{const current=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!current)return;links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${current.target.id}`))},{rootMargin:'-18% 0px -65% 0px',threshold:[0,.1,.35]});
+  targets.forEach(target=>sectionObserver.observe(target))
+}
 
 function extraData(card){
   return[...card.querySelectorAll('.extra-row')].map(r=>{
@@ -143,7 +222,13 @@ function fileData(file){
   })
 }
 function renderEditGallery(card){card.querySelector('.editGallery').innerHTML=(card._images||[]).map(src=>`<img src="${src}">`).join('')}
-function renumber(){[...document.querySelectorAll('.item')].forEach((c,i)=>c.querySelector('.itemNo').textContent=`Quote item ${i+1}`)}
+function renumber(){
+  [...document.querySelectorAll('.item')].forEach((card,i)=>{
+    const n=i+1;card.querySelector('.itemNo').textContent=`Quote item ${n}`;
+    card.querySelectorAll('[data-anchor]').forEach(section=>section.id=`item-${n}-${section.dataset.anchor}`)
+  });
+  renderProductNav()
+}
 
 function lineTable(i,title){
   const rows=[];if(i.retail)rows.push([title,1,i.retail]);i.extras.forEach(x=>rows.push([x.description,x.qty,x.total]));if(i.freight)rows.push(['Freight',1,i.freight]);if(i.install)rows.push(['Installation',1,i.install]);
@@ -156,8 +241,8 @@ function productHtml(i){
 }
 
 function emailText(items,grand){
-  const vehicle=vehicleText(),main=items.filter(x=>x.role==='included'),alts=items.filter(x=>x.role==='alternative'),rego=$('rego').value.trim();
-  let out=`Hi ${$('first').value.trim()||'there'},\n\nThank you for your enquiry${vehicle?` for your ${vehicle}`:''}${rego?` (${rego})`:''}.\n\n`;
+  const vehicle=vehicleText(),main=items.filter(x=>x.role==='included'),alts=items.filter(x=>x.role==='alternative');
+  let out=`Hi ${$('first').value.trim()||'there'},\n\nThank you for your enquiry${vehicle?` for your ${vehicle}`:''}.\n\n`;
   main.forEach((i,n)=>{const title=[i.brand,i.product].filter(Boolean).join(' ')||`Option ${n+1}`;out+=`${n+1}. ${title}${i.category?` — ${i.category}`:''}\n`;if(i.desc)out+=i.desc+'\n';if(i.features.length)out+='Key features / notes:\n'+i.features.map(x=>'• '+x).join('\n')+'\n';if(i.retail)out+=`Product: ${money(i.retail)}\n`;if(i.extras.length){out+='Required items:\n';i.extras.forEach(x=>out+=`• ${x.description} × ${qty(x.qty)}: ${money(x.total)}\n`)}if(i.freight)out+=`Freight: ${money(i.freight)}\n`;if(i.install)out+=`Installation: ${money(i.install)}\n`;out+=`Total fitted: ${money(i.total)}\n\n`});
   if(main.length>1)out+=`Total fitted for included items: ${money(grand)}\n\n`;
   if(alts.length){out+='Alternative options:\n';alts.forEach(i=>{const title=[i.brand,i.product].filter(Boolean).join(' ')||'Alternative';out+=`${title}: ${money(i.total)} fitted\n`})}
@@ -170,12 +255,24 @@ function update(){
   $('pName').textContent=name();$('pVehicle').textContent=vehicleText();
   $('pDate').textContent=displayDate($('quoteDate').value);
   $('pJob').textContent=$('jobNo').value.trim()?`Job No. ${$('jobNo').value.trim()}`:'';
-  $('pRego').textContent=$('rego').value.trim();$('pRegoWrap').style.display=$('rego').value.trim()?'inline':'none';
   $('pRequested').innerHTML=req().map(x=>`<span class="chip">${esc(x)}</span>`).join('');
   cards.forEach((c,n)=>{const i=items[n];c.querySelector('[data-c="retail"]').textContent=money(i.retail);c.querySelector('[data-c="extras"]').textContent=money(i.extrasTotal);c.querySelector('[data-c="freight"]').textContent=money(i.freight);c.querySelector('[data-c="install"]').textContent=money(i.install);c.querySelector('[data-c="total"]').textContent=money(i.total)});
   const grand=items.filter(x=>x.role==='included').reduce((s,x)=>s+x.total,0);
-  $('buildGrand').textContent=money(grand);$('pGrand').textContent=money(grand);$('quoteItems').innerHTML=items.map(productHtml).join('');$('email').textContent=emailText(items,grand);
+  $('buildGrand').textContent=money(grand);$('pGrand').textContent=money(grand);$('quoteItems').innerHTML=items.map(productHtml).join('');$('email').textContent=emailText(items,grand);refreshProductNavLabels(cards);
   document.title=`Complete 4x4 Quote${$('jobNo').value.trim()?` - ${$('jobNo').value.trim()}`:''}`
+}
+
+function openPreview(){
+  update();previewReturnFocus=document.activeElement;
+  $('previewModal').classList.add('open');$('previewModal').setAttribute('aria-hidden','false');document.body.classList.add('preview-open');$('closePreview').focus()
+}
+function closePreview(){
+  $('previewModal').classList.remove('open');$('previewModal').setAttribute('aria-hidden','true');document.body.classList.remove('preview-open');
+  if(previewReturnFocus&&typeof previewReturnFocus.focus==='function')previewReturnFocus.focus()
+}
+async function copyEmailReply(button){
+  try{await navigator.clipboard.writeText($('email').textContent);const old=button.textContent;button.textContent='Copied';setTimeout(()=>button.textContent=old,1000)}
+  catch{alert('Please open the quote preview and copy the email wording manually.')}
 }
 
 function snapshot(){
@@ -220,9 +317,14 @@ function resetQuote(){
 
 ['first','surname','quoteDate','jobNo','rego','year','make','model','variant','labour','requested'].forEach(id=>$(id).addEventListener('input',update));
 $('addItem').onclick=()=>addItem({category:req()[0]||''});
-$('copyEmail').onclick=async()=>{try{await navigator.clipboard.writeText($('email').textContent);$('copyEmail').textContent='Copied';setTimeout(()=>$('copyEmail').textContent='Copy email reply',1000)}catch{alert('Please copy the email preview manually.')}};
+$('openPreview').onclick=openPreview;$('openPreviewBottom').onclick=openPreview;$('closePreview').onclick=closePreview;$('printQuote').onclick=()=>window.print();
+$('copyEmail').onclick=()=>copyEmailReply($('copyEmail'));$('copyEmailPreview').onclick=()=>copyEmailReply($('copyEmailPreview'));
+$('previewModal').addEventListener('click',e=>{if(e.target===$('previewModal'))closePreview()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('previewModal').classList.contains('open'))closePreview()});
+$('sectionNav').addEventListener('click',e=>{const link=e.target.closest('a');if(!link)return;document.querySelectorAll('#sectionNav a').forEach(a=>a.classList.toggle('active',a===link))});
 $('saveQuote').onclick=saveCurrentQuote;$('loadQuote').onclick=loadSavedQuote;$('deleteQuote').onclick=deleteSavedQuote;$('newQuote').onclick=resetQuote;
 $('quoteDate').value=todayLocal();refreshSavedQuotes();
 addItem({category:'Bull Bar',brand:'TJM',product:'Venturer Bull Bar',compat:'Ford Ranger / Everest range',desc:'Matt black textured steel bull bar designed to complement the vehicle while providing practical protection and integrated recovery capability.',features:'ADR / airbag compliant\nCompatible with OE safety systems\nRated recovery points\nWinch compatible'});
 </script>
 </body></html>
+
