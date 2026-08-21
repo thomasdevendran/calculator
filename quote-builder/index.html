@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete 4x4 Quote Builder</title>
+  <style>
+    :root{
+      --bg:#f4f5f7;--panel:#fff;--text:#16181d;--muted:#68707c;--line:#dfe3e8;
+      --accent:#f0df00;--accent-dark:#16181d;--good:#177a45;--soft:#f9fafb;--danger:#a53b2c;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    header{background:#111318;color:#fff;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;position:sticky;top:0;z-index:5}
+    .brand{font-weight:800;letter-spacing:.04em}.brand span{color:var(--accent)}
+    .demo{font-size:.82rem;color:#c9ced6}
+    .app{display:grid;grid-template-columns:minmax(320px,420px) minmax(440px,1fr);gap:24px;padding:24px;max-width:1500px;margin:auto}
+    .panel,.preview{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px rgba(20,25,35,.06)}
+    .panel{padding:22px}.preview{overflow:hidden;align-self:start;position:sticky;top:92px}
+    h1{font-size:1.35rem;margin:0 0 4px}.sub{color:var(--muted);font-size:.92rem;margin-bottom:20px}
+    .section{border-top:1px solid var(--line);padding-top:18px;margin-top:18px}.section:first-of-type{border-top:0;padding-top:0;margin-top:0}
+    .section-title{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800;margin-bottom:12px}
+    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    label{display:block;font-size:.78rem;font-weight:700;margin:0 0 6px;color:#454b55}
+    input,select,textarea{width:100%;border:1px solid #cfd4db;background:#fff;border-radius:10px;padding:11px 12px;font:inherit;color:var(--text);outline:none}
+    input:focus,select:focus,textarea:focus{border-color:#888f99;box-shadow:0 0 0 3px rgba(0,0,0,.05)}
+    textarea{min-height:86px;resize:vertical}.money{position:relative}.money::before{content:'$';position:absolute;left:12px;top:34px;color:var(--muted)}.money input{padding-left:25px}
+    .upload{border:1.5px dashed #bfc5cc;border-radius:12px;padding:14px;text-align:center;background:var(--soft)}
+    .upload input{border:0;padding:0;background:transparent}.hint{font-size:.76rem;color:var(--muted);margin-top:6px}
+    .calcbox{background:#111318;color:#fff;border-radius:12px;padding:14px;margin-top:12px;display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center}
+    .calcbox .muted{color:#b9c0c9;font-size:.84rem}.calcbox strong{font-size:1.12rem}.calcbox .total{grid-column:1/-1;border-top:1px solid #343840;padding-top:10px;margin-top:4px;display:flex;justify-content:space-between;font-size:1.16rem}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:10px;padding:11px 14px;font-weight:800;cursor:pointer}.primary{background:var(--accent);color:#111}.secondary{background:#eceff2;color:#15171b}.outline{background:#fff;border:1px solid #ccd1d7;color:#15171b}
+    .alt{background:#fbfbfc;border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px}.alt.hidden{display:none}
+    .quote-head{padding:28px 32px;background:#111318;color:white;display:flex;justify-content:space-between;align-items:flex-start}.quote-logo{font-size:1.25rem;font-weight:900}.quote-logo span{color:var(--accent)}.quote-ref{font-size:.78rem;color:#c5cad2;text-align:right}
+    .quote-body{padding:30px 34px 36px}.eyebrow{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800}.vehicle{font-size:1.55rem;font-weight:850;margin:4px 0 20px}
+    .product-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:18px}.product-image{height:240px;background:linear-gradient(135deg,#eceff3,#f8f9fa);display:grid;place-items:center;color:#7c838e;position:relative}.product-image img{width:100%;height:100%;object-fit:cover;display:none}.image-note{font-size:.9rem}
+    .product-content{padding:20px}.tag{display:inline-block;background:#eef0f2;border-radius:999px;padding:6px 9px;font-size:.74rem;font-weight:800;margin-bottom:10px}.product-title{font-size:1.25rem;font-weight:850;margin-bottom:3px}.sku{color:var(--muted);font-size:.82rem;margin-bottom:14px}
+    .features{margin:14px 0 0;padding-left:18px;color:#353a42}.features li{margin:7px 0}
+    .price-table{margin-top:18px;border-top:1px solid var(--line)}.price-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #edf0f2}.price-row.total{font-size:1.18rem;font-weight:900;border-bottom:0;padding-top:16px}
+    .availability{color:var(--good);font-weight:800}.note-box{margin-top:18px;background:#fffce8;border-left:4px solid var(--accent);padding:12px 14px;font-size:.88rem;color:#4a4f57}
+    .alt-preview{margin-top:22px;padding-top:20px;border-top:1px dashed #cfd4da}.alt-preview.hidden{display:none}.alt-row{display:flex;justify-content:space-between;gap:15px;background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:14px}.alt-row strong{display:block}.small{font-size:.8rem;color:var(--muted)}
+    .email-preview{margin-top:24px;padding:18px;border:1px solid var(--line);border-radius:12px;background:#fafbfc;white-space:pre-line;font-size:.9rem;line-height:1.55}
+    @media(max-width:980px){.app{grid-template-columns:1fr}.preview{position:static}.grid3{grid-template-columns:1fr 1fr}}
+    @media(max-width:620px){header{padding:14px 16px}.app{padding:12px}.panel{padding:16px}.grid2,.grid3{grid-template-columns:1fr}.quote-body{padding:22px 18px}.quote-head{padding:22px 18px}.product-image{height:190px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">COMPLETE <span>4X4</span> · Quote Builder</div>
+  <div class="demo">Prototype · manually verified dealer data</div>
+</header>
+
+<div class="app">
+  <section class="panel">
+    <h1>Build a customer quote</h1>
+    <div class="sub">Enter the verified details from the supplier portal. The customer preview updates instantly.</div>
+
+    <div class="section">
+      <div class="section-title">1 · Customer & vehicle</div>
+      <div class="grid2">
+        <div><label>Customer name</label><input id="customer" value="John" /></div>
+        <div><label>Year</label><input id="year" value="2024" /></div>
+        <div><label>Make</label><input id="make" value="Ford" /></div>
+        <div><label>Model</label><input id="model" value="Ranger" /></div>
+        <div><label>Variant</label><input id="variant" value="Wildtrak" /></div>
+        <div><label>Requested product</label><input id="request" value="Bull Bar" /></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">2 · Main product</div>
+      <div class="grid2">
+        <div><label>Brand</label><input id="brand" value="TJM" /></div>
+        <div><label>Product name</label><input id="product" value="Venturer Bull Bar" /></div>
+        <div><label>SKU / Part No.</label><input id="sku" placeholder="Paste dealer SKU" /></div>
+        <div><label>Availability</label><select id="stock"><option>Check stock</option><option>In stock</option><option>Low stock</option><option>Out of stock</option><option>Order required</option></select></div>
+      </div>
+      <div style="margin-top:12px"><label>Compatibility</label><input id="compatibility" value="Ford Ranger / Everest range" /></div>
+      <div style="margin-top:12px"><label>Customer-facing description</label><textarea id="description">Matt black textured steel bull bar designed for the Ford Ranger and Everest range, with integrated recovery points and compatibility with OE safety systems.</textarea></div>
+      <div style="margin-top:12px"><label>Key features (one per line)</label><textarea id="features">ADR / airbag compliant
+Compatible with OE safety systems
+Rated recovery points
+Winch compatible
+Dual aerial mounting locations</textarea></div>
+      <div class="upload" style="margin-top:12px">
+        <label>Product image</label>
+        <input id="imageInput" type="file" accept="image/*" />
+        <div class="hint">Upload a manufacturer product image for the quote preview.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">3 · Price & installation</div>
+      <div class="grid3">
+        <div class="money"><label>Retail price</label><input id="retail" type="number" min="0" step="0.01" placeholder="0.00" /></div>
+        <div><label>Install hours</label><input id="hours" type="number" min="0" step="0.25" placeholder="0" /></div>
+        <div class="money"><label>Labour / hour</label><input id="labour" type="number" min="0" step="1" value="165" /></div>
+      </div>
+      <div class="calcbox">
+        <span class="muted">Product</span><span id="calcProduct">$0.00</span>
+        <span class="muted">Installation</span><span id="calcInstall">$0.00</span>
+        <div class="total"><span>Total fitted</span><strong id="calcTotal">$0.00</strong></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">4 · Alternative brand</div>
+      <button class="btn outline" id="toggleAlt">+ Add alternative option</button>
+      <div class="alt hidden" id="altBox">
+        <div class="grid2">
+          <div><label>Brand</label><input id="altBrand" placeholder="e.g. ECB" /></div>
+          <div><label>Product</label><input id="altProduct" placeholder="Alternative product" /></div>
+          <div class="money"><label>Retail price</label><input id="altRetail" type="number" min="0" step="0.01" /></div>
+          <div><label>Install hours</label><input id="altHours" type="number" min="0" step="0.25" /></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" id="copyEmail">Copy email reply</button>
+      <button class="btn secondary" onclick="window.print()">Print / Save PDF</button>
+    </div>
+  </section>
+
+  <section class="preview">
+    <div class="quote-head">
+      <div class="quote-logo">COMPLETE <span>4X4</span></div>
+      <div class="quote-ref">VEHICLE UPGRADE QUOTE<br><span id="quoteDate"></span></div>
+    </div>
+    <div class="quote-body">
+      <div class="eyebrow">Prepared for <span id="pCustomer">John</span></div>
+      <div class="vehicle" id="pVehicle">2024 Ford Ranger Wildtrak</div>
+      <div class="small">Requested: <span id="pRequest">Bull Bar</span></div>
+
+      <div class="product-card">
+        <div class="product-image"><img id="previewImage" alt="Product preview" /><div class="image-note" id="imageNote">Upload product image</div></div>
+        <div class="product-content">
+          <div class="tag" id="pBrand">TJM</div>
+          <div class="product-title" id="pProduct">Venturer Bull Bar</div>
+          <div class="sku">SKU: <span id="pSku">To be confirmed</span> · <span id="pCompat">Ford Ranger / Everest range</span></div>
+          <div id="pDescription">Matt black textured steel bull bar designed for the Ford Ranger and Everest range, with integrated recovery points and compatibility with OE safety systems.</div>
+          <ul class="features" id="pFeatures"></ul>
+          <div class="price-table">
+            <div class="price-row"><span>Product</span><strong id="pRetail">Price pending</strong></div>
+            <div class="price-row"><span>Professional installation <span id="pHours"></span></span><strong id="pInstall">Price pending</strong></div>
+            <div class="price-row total"><span>Total fitted</span><span id="pTotal">Price pending</span></div>
+          </div>
+          <div class="note-box">Availability: <span class="availability" id="pStock">Check stock</span>. Final compatibility and stock are confirmed from the manufacturer dealer portal before booking.</div>
+        </div>
+      </div>
+
+      <div class="alt-preview hidden" id="altPreview">
+        <div class="eyebrow">Alternative option</div>
+        <div class="alt-row">
+          <div><strong id="pAltName">Alternative product</strong><span class="small" id="pAltDetail"></span></div>
+          <strong id="pAltTotal">Price pending</strong>
+        </div>
+      </div>
+
+      <div class="email-preview" id="emailPreview"></div>
+    </div>
+  </section>
+</div>
+
+<script>
+  const ids = ['customer','year','make','model','variant','request','brand','product','sku','stock','compatibility','description','features','retail','hours','labour','altBrand','altProduct','altRetail','altHours'];
+  const el = Object.fromEntries(ids.map(id => [id, document.getElementById(id)]));
+  const money = n => new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(Number(n||0));
+  document.getElementById('quoteDate').textContent = new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'});
+
+  function update(){
+    const retail = Number(el.retail.value||0), hours = Number(el.hours.value||0), labour = Number(el.labour.value||0);
+    const install = hours * labour, total = retail + install;
+    document.getElementById('calcProduct').textContent = money(retail);
+    document.getElementById('calcInstall').textContent = money(install);
+    document.getElementById('calcTotal').textContent = money(total);
+    document.getElementById('pCustomer').textContent = el.customer.value || 'Customer';
+    document.getElementById('pVehicle').textContent = [el.year.value,el.make.value,el.model.value,el.variant.value].filter(Boolean).join(' ');
+    document.getElementById('pRequest').textContent = el.request.value || '4x4 accessory';
+    document.getElementById('pBrand').textContent = el.brand.value || 'Brand';
+    document.getElementById('pProduct').textContent = el.product.value || 'Product';
+    document.getElementById('pSku').textContent = el.sku.value || 'To be confirmed';
+    document.getElementById('pCompat').textContent = el.compatibility.value || 'Compatibility to be confirmed';
+    document.getElementById('pDescription').textContent = el.description.value || '';
+    document.getElementById('pStock').textContent = el.stock.value;
+    document.getElementById('pRetail').textContent = retail ? money(retail) : 'Price pending';
+    document.getElementById('pHours').textContent = hours ? `(${hours} hr${hours===1?'':'s'})` : '';
+    document.getElementById('pInstall').textContent = install ? money(install) : 'Price pending';
+    document.getElementById('pTotal').textContent = total ? money(total) : 'Price pending';
+    const list = document.getElementById('pFeatures'); list.innerHTML='';
+    el.features.value.split('\n').map(x=>x.trim()).filter(Boolean).forEach(x=>{const li=document.createElement('li');li.textContent=x;list.appendChild(li)});
+
+    const altRetail=Number(el.altRetail.value||0), altHours=Number(el.altHours.value||0), altTotal=altRetail+(altHours*labour);
+    document.getElementById('pAltName').textContent=[el.altBrand.value,el.altProduct.value].filter(Boolean).join(' ') || 'Alternative product';
+    document.getElementById('pAltDetail').textContent=altHours?` · ${altHours} installation hours`:'';
+    document.getElementById('pAltTotal').textContent=altTotal?`${money(altTotal)} fitted`:'Price pending';
+
+    const customer=el.customer.value||'there', vehicle=[el.year.value,el.make.value,el.model.value,el.variant.value].filter(Boolean).join(' ');
+    const fitted=total?money(total):'to be confirmed';
+    const altLine=(el.altBrand.value||el.altProduct.value) && altTotal ? `\nI have also included ${[el.altBrand.value,el.altProduct.value].filter(Boolean).join(' ')} as an alternative at ${money(altTotal)} fitted.` : '';
+    document.getElementById('emailPreview').textContent = `Hi ${customer},\n\nThanks for your enquiry regarding a ${el.request.value||'4x4 accessory'} for your ${vehicle}.\n\nWe can offer the ${[el.brand.value,el.product.value].filter(Boolean).join(' ')} at a total fitted price of ${fitted}.${altLine}\n\nPlease let me know if you would like us to confirm availability and arrange installation.\n\nKind regards,\nComplete 4x4`;
+  }
+  ids.forEach(id=>el[id].addEventListener('input',update));
+  el.stock.addEventListener('change',update);
+
+  document.getElementById('imageInput').addEventListener('change',e=>{
+    const file=e.target.files[0]; if(!file)return; const reader=new FileReader();
+    reader.onload=()=>{const img=document.getElementById('previewImage');img.src=reader.result;img.style.display='block';document.getElementById('imageNote').style.display='none'};
+    reader.readAsDataURL(file);
+  });
+
+  document.getElementById('toggleAlt').addEventListener('click',()=>{
+    document.getElementById('altBox').classList.toggle('hidden');
+    document.getElementById('altPreview').classList.toggle('hidden');
+    document.getElementById('toggleAlt').textContent=document.getElementById('altBox').classList.contains('hidden')?'+ Add alternative option':'− Hide alternative option';
+  });
+
+  document.getElementById('copyEmail').addEventListener('click',async()=>{
+    const text=document.getElementById('emailPreview').textContent;
+    try{await navigator.clipboard.writeText(text);document.getElementById('copyEmail').textContent='Copied!';setTimeout(()=>document.getElementById('copyEmail').textContent='Copy email reply',1400)}catch{alert('Copy failed. Select the email text manually.')}
+  });
+  update();
+</script>
+</body>
+</html>
