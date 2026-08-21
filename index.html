@@ -17,6 +17,79 @@
       --equal-b: #35b8ff;
       --clear-a: #ff5c68;
       --clear-b: #ff7a45;
+      --display: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.045));
+      --bg-a: rgba(82, 111, 255, 0.34);
+      --bg-b: rgba(255, 79, 129, 0.28);
+      --bg-c: rgba(70, 230, 167, 0.20);
+      --bg-base: #080b14;
+      --orb-a: #536dff;
+      --orb-b: #ff4f81;
+      --display-text: #fff;
+      --equal-text: #04120e;
+    }
+
+    body[data-theme="midnight"] {
+      --text: #f5f7ff;
+      --muted: rgba(245,247,255,.55);
+      --panel: rgba(3, 10, 24, .86);
+      --key: rgba(86, 119, 166, .12);
+      --key-hover: rgba(111, 150, 205, .22);
+      --accent-a: #6d8cff;
+      --accent-b: #8265ff;
+      --equal-a: #45d7ff;
+      --equal-b: #4c72ff;
+      --clear-a: #ff627f;
+      --clear-b: #b84dff;
+      --bg-a: rgba(24, 105, 255, .28);
+      --bg-b: rgba(94, 55, 255, .25);
+      --bg-c: rgba(51, 220, 255, .13);
+      --bg-base: #020713;
+      --orb-a: #1b68ff;
+      --orb-b: #7a45ff;
+    }
+
+    body[data-theme="sunset"] {
+      --text: #fff9f3;
+      --muted: rgba(255,249,243,.62);
+      --panel: rgba(43, 18, 24, .80);
+      --key: rgba(255, 239, 220, .11);
+      --key-hover: rgba(255, 239, 220, .19);
+      --accent-a: #ffb03a;
+      --accent-b: #ff5f56;
+      --equal-a: #ffd36a;
+      --equal-b: #ff8d4a;
+      --clear-a: #ff4d67;
+      --clear-b: #ff7846;
+      --bg-a: rgba(255, 150, 47, .34);
+      --bg-b: rgba(255, 74, 112, .31);
+      --bg-c: rgba(255, 201, 81, .18);
+      --bg-base: #1b0910;
+      --orb-a: #ff8a31;
+      --orb-b: #ff3e78;
+      --equal-text: #381800;
+    }
+
+    body[data-theme="ice"] {
+      --text: #102033;
+      --muted: rgba(16,32,51,.52);
+      --panel: rgba(244, 251, 255, .78);
+      --key: rgba(28, 75, 118, .08);
+      --key-hover: rgba(28, 75, 118, .14);
+      --accent-a: #55a9ff;
+      --accent-b: #7c70ff;
+      --equal-a: #51dfc2;
+      --equal-b: #4aa8ff;
+      --clear-a: #ff718b;
+      --clear-b: #ff9864;
+      --display: linear-gradient(145deg, rgba(255,255,255,.78), rgba(226,243,255,.58));
+      --bg-a: rgba(84, 168, 255, .28);
+      --bg-b: rgba(122, 112, 255, .20);
+      --bg-c: rgba(81, 223, 194, .22);
+      --bg-base: #eaf7ff;
+      --orb-a: #65b8ff;
+      --orb-b: #8a7cff;
+      --display-text: #102033;
+      --equal-text: #06241e;
     }
 
     * { box-sizing: border-box; }
@@ -30,10 +103,11 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 15% 20%, rgba(82, 111, 255, 0.34), transparent 30%),
-        radial-gradient(circle at 85% 25%, rgba(255, 79, 129, 0.28), transparent 30%),
-        radial-gradient(circle at 50% 90%, rgba(70, 230, 167, 0.20), transparent 35%),
-        #080b14;
+        radial-gradient(circle at 15% 20%, var(--bg-a), transparent 30%),
+        radial-gradient(circle at 85% 25%, var(--bg-b), transparent 30%),
+        radial-gradient(circle at 50% 90%, var(--bg-c), transparent 35%),
+        var(--bg-base);
+      transition: background 500ms ease, color 350ms ease;
     }
 
     body::before,
@@ -47,20 +121,11 @@
       opacity: 0.22;
       z-index: -1;
       animation: drift 11s ease-in-out infinite alternate;
+      transition: background 500ms ease;
     }
 
-    body::before {
-      background: #536dff;
-      top: -14rem;
-      left: -10rem;
-    }
-
-    body::after {
-      background: #ff4f81;
-      right: -13rem;
-      bottom: -15rem;
-      animation-delay: -4s;
-    }
+    body::before { background: var(--orb-a); top: -14rem; left: -10rem; }
+    body::after { background: var(--orb-b); right: -13rem; bottom: -15rem; animation-delay: -4s; }
 
     .calculator {
       width: min(92vw, 370px);
@@ -68,30 +133,46 @@
       border: 1px solid rgba(255, 255, 255, 0.13);
       border-radius: 28px;
       background: var(--panel);
-      box-shadow:
-        0 28px 70px rgba(0, 0, 0, 0.48),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      box-shadow: 0 28px 70px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.08);
       backdrop-filter: blur(22px);
       animation: calculatorIn 700ms cubic-bezier(.2,.85,.25,1) both, float 5s ease-in-out 800ms infinite;
+      transition: background 450ms ease, box-shadow 450ms ease;
     }
 
     .brand {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
       margin: 2px 4px 14px;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
+      font-size: .72rem;
+      letter-spacing: .18em;
       text-transform: uppercase;
       color: var(--muted);
     }
+
+    .brand-right { display: flex; align-items: center; gap: 9px; }
+
+    .theme-button {
+      min-height: 0;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: .66rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text);
+      background: var(--key);
+      white-space: nowrap;
+    }
+
+    .theme-button:hover { transform: translateY(-1px); }
 
     .live-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
       background: var(--equal-a);
-      box-shadow: 0 0 0 0 rgba(70, 230, 167, .5);
+      box-shadow: 0 0 0 0 rgba(70,230,167,.5);
       animation: ping 1.8s infinite;
     }
 
@@ -101,10 +182,11 @@
       margin-bottom: 14px;
       padding: 16px 16px 13px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255,255,255,.09);
       border-radius: 18px;
-      background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.045));
-      box-shadow: inset 0 1px 14px rgba(0, 0, 0, .24);
+      background: var(--display);
+      box-shadow: inset 0 1px 14px rgba(0,0,0,.18);
+      transition: background 450ms ease;
     }
 
     .display-wrap::after {
@@ -113,7 +195,7 @@
       inset: 0;
       pointer-events: none;
       opacity: 0;
-      background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.28) 45%, transparent 70%);
+      background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.34) 45%, transparent 70%);
       transform: translateX(-120%);
     }
 
@@ -136,104 +218,52 @@
       text-align: right;
       font-size: clamp(2rem, 9vw, 2.8rem);
       font-weight: 650;
-      letter-spacing: -0.035em;
-      color: #fff;
+      letter-spacing: -.035em;
+      color: var(--display-text);
       background: transparent;
+      transition: color 350ms ease;
     }
 
     .display-wrap.result-pop {
       animation: resultPop 520ms cubic-bezier(.2,.9,.25,1);
-      box-shadow:
-        inset 0 1px 14px rgba(0, 0, 0, .24),
-        0 0 36px rgba(70, 230, 167, .18);
+      box-shadow: inset 0 1px 14px rgba(0,0,0,.18), 0 0 36px rgba(70,230,167,.18);
     }
+    .display-wrap.result-pop::after { opacity: 1; animation: shine 520ms ease-out; }
+    .display-wrap.error-pop { animation: errorShake 360ms ease-in-out; box-shadow: 0 0 30px rgba(255,92,104,.24); }
 
-    .display-wrap.result-pop::after {
-      opacity: 1;
-      animation: shine 520ms ease-out;
-    }
-
-    .display-wrap.error-pop {
-      animation: errorShake 360ms ease-in-out;
-      box-shadow: 0 0 30px rgba(255, 92, 104, .24);
-    }
-
-    .keys {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 11px;
-    }
+    .keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; }
 
     button {
       position: relative;
       min-height: 62px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,.08);
       border-radius: 17px;
       cursor: pointer;
       color: var(--text);
       background: var(--key);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.07),
-        0 6px 18px rgba(0,0,0,.12);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 6px 18px rgba(0,0,0,.12);
       font: inherit;
       font-size: 1.2rem;
       font-weight: 600;
-      transition:
-        transform 150ms ease,
-        background 180ms ease,
-        box-shadow 180ms ease,
-        border-color 180ms ease;
+      transition: transform 150ms ease, background 250ms ease, box-shadow 180ms ease, border-color 180ms ease, color 250ms ease;
       -webkit-tap-highlight-color: transparent;
     }
 
     button:hover {
       transform: translateY(-3px) scale(1.025);
       background: var(--key-hover);
-      border-color: rgba(255, 255, 255, 0.18);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.1),
-        0 12px 24px rgba(0,0,0,.20),
-        0 0 22px rgba(116, 143, 255, 0.12);
+      border-color: rgba(255,255,255,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 12px 24px rgba(0,0,0,.18), 0 0 22px rgba(116,143,255,.12);
     }
 
-    button:active,
-    button.is-pressed {
-      transform: translateY(1px) scale(.94);
-      transition-duration: 70ms;
-    }
+    button:active, button.is-pressed { transform: translateY(1px) scale(.94); transition-duration: 70ms; }
 
-    .operator {
-      background: linear-gradient(135deg, var(--accent-a), var(--accent-b));
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(255, 79, 129, .18);
-    }
+    .operator { background: linear-gradient(135deg, var(--accent-a), var(--accent-b)); color: #fff; }
+    .clear { background: linear-gradient(135deg, var(--clear-a), var(--clear-b)); color: #fff; }
+    .equals { grid-column: span 2; background: linear-gradient(135deg, var(--equal-a), var(--equal-b)); color: var(--equal-text); font-weight: 800; }
 
-    .operator:hover {
-      background: linear-gradient(135deg, #ffb34f, #ff618e);
-      box-shadow: 0 12px 28px rgba(255, 79, 129, .30);
-    }
-
-    .clear {
-      background: linear-gradient(135deg, var(--clear-a), var(--clear-b));
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(255, 92, 104, .18);
-    }
-
-    .equals {
-      grid-column: span 2;
-      background: linear-gradient(135deg, var(--equal-a), var(--equal-b));
-      color: #04120e;
-      font-weight: 800;
-      box-shadow: 0 8px 24px rgba(53, 184, 255, .18);
-    }
-
-    .equals:hover {
-      background: linear-gradient(135deg, #66f3ba, #55c6ff);
-      box-shadow:
-        0 12px 30px rgba(53, 184, 255, .26),
-        0 0 26px rgba(70, 230, 167, .20);
-    }
+    .operator:hover, .clear:hover, .equals:hover { filter: brightness(1.08); }
 
     .ripple {
       position: absolute;
@@ -244,64 +274,31 @@
       animation: ripple 520ms ease-out forwards;
     }
 
-    @keyframes ripple {
-      to { transform: translate(-50%, -50%) scale(3.6); opacity: 0; }
-    }
+    .theme-flash { animation: themeFlash 420ms ease; }
 
-    @keyframes calculatorIn {
-      from { opacity: 0; transform: translateY(28px) scale(.94); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    @keyframes float {
-      0%, 100% { translate: 0 0; }
-      50% { translate: 0 -6px; }
-    }
-
-    @keyframes drift {
-      from { transform: translate3d(0, 0, 0) scale(1); }
-      to { transform: translate3d(70px, 45px, 0) scale(1.15); }
-    }
-
-    @keyframes ping {
-      0% { box-shadow: 0 0 0 0 rgba(70, 230, 167, .48); }
-      70% { box-shadow: 0 0 0 9px rgba(70, 230, 167, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(70, 230, 167, 0); }
-    }
-
-    @keyframes resultPop {
-      0% { transform: scale(1); }
-      45% { transform: scale(1.035); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes shine {
-      from { transform: translateX(-120%); }
-      to { transform: translateX(120%); }
-    }
-
-    @keyframes errorShake {
-      0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-7px); }
-      50% { transform: translateX(7px); }
-      75% { transform: translateX(-4px); }
-    }
+    @keyframes ripple { to { transform: translate(-50%, -50%) scale(3.6); opacity: 0; } }
+    @keyframes calculatorIn { from { opacity: 0; transform: translateY(28px) scale(.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes float { 0%,100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+    @keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(70px,45px,0) scale(1.15); } }
+    @keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(70,230,167,.48); } 70% { box-shadow: 0 0 0 9px rgba(70,230,167,0); } 100% { box-shadow: 0 0 0 0 rgba(70,230,167,0); } }
+    @keyframes resultPop { 0% { transform: scale(1); } 45% { transform: scale(1.035); } 100% { transform: scale(1); } }
+    @keyframes shine { from { transform: translateX(-120%); } to { transform: translateX(120%); } }
+    @keyframes errorShake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-7px); } 50% { transform: translateX(7px); } 75% { transform: translateX(-4px); } }
+    @keyframes themeFlash { 0% { transform: scale(1); } 50% { transform: scale(1.025); } 100% { transform: scale(1); } }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
-<body>
-  <main class="calculator" aria-label="Animated calculator">
+<body data-theme="neon">
+  <main class="calculator" id="calculator" aria-label="Animated calculator">
     <div class="brand">
       <span>Calculator</span>
-      <span class="live-dot" aria-hidden="true"></span>
+      <div class="brand-right">
+        <button class="theme-button" id="themeButton" type="button" aria-label="Change calculator theme">Theme: Neon</button>
+        <span class="live-dot" aria-hidden="true"></span>
+      </div>
     </div>
 
     <div class="display-wrap" id="displayWrap">
@@ -314,22 +311,18 @@
       <button data-value="(">(</button>
       <button data-value=")">)</button>
       <button class="operator" data-value="/">÷</button>
-
       <button data-value="7">7</button>
       <button data-value="8">8</button>
       <button data-value="9">9</button>
       <button class="operator" data-value="*">×</button>
-
       <button data-value="4">4</button>
       <button data-value="5">5</button>
       <button data-value="6">6</button>
       <button class="operator" data-value="-">−</button>
-
       <button data-value="1">1</button>
       <button data-value="2">2</button>
       <button data-value="3">3</button>
       <button class="operator" data-value="+">+</button>
-
       <button data-value="0">0</button>
       <button data-value=".">.</button>
       <button class="equals" data-action="equals">=</button>
@@ -341,15 +334,38 @@
     const history = document.getElementById('history');
     const displayWrap = document.getElementById('displayWrap');
     const keys = document.querySelector('.keys');
+    const calculator = document.getElementById('calculator');
+    const themeButton = document.getElementById('themeButton');
     let expression = '';
 
-    function pretty(value) {
-      return value.replaceAll('*', '×').replaceAll('/', '÷');
+    const themes = [
+      { id: 'neon', name: 'Neon' },
+      { id: 'midnight', name: 'Midnight' },
+      { id: 'sunset', name: 'Sunset' },
+      { id: 'ice', name: 'Ice' }
+    ];
+
+    function applyTheme(themeId) {
+      const theme = themes.find(item => item.id === themeId) || themes[0];
+      document.body.dataset.theme = theme.id;
+      themeButton.textContent = `Theme: ${theme.name}`;
+      localStorage.setItem('calculatorTheme', theme.id);
+      calculator.classList.remove('theme-flash');
+      void calculator.offsetWidth;
+      calculator.classList.add('theme-flash');
+      setTimeout(() => calculator.classList.remove('theme-flash'), 450);
     }
 
-    function updateDisplay(value = expression || '0') {
-      display.value = pretty(String(value));
-    }
+    themeButton.addEventListener('click', () => {
+      const currentIndex = themes.findIndex(theme => theme.id === document.body.dataset.theme);
+      const nextTheme = themes[(currentIndex + 1) % themes.length];
+      applyTheme(nextTheme.id);
+    });
+
+    applyTheme(localStorage.getItem('calculatorTheme') || 'neon');
+
+    function pretty(value) { return value.replaceAll('*', '×').replaceAll('/', '÷'); }
+    function updateDisplay(value = expression || '0') { display.value = pretty(String(value)); }
 
     function animateDisplay(type) {
       displayWrap.classList.remove('result-pop', 'error-pop');
@@ -373,14 +389,11 @@
 
     function calculate() {
       if (!expression) return;
-
       const original = expression;
       const safeExpression = expression.replace(/[^0-9+\-*/().]/g, '');
-
       try {
         const result = Function(`"use strict"; return (${safeExpression})`)();
         if (!Number.isFinite(result)) throw new Error('Invalid result');
-
         history.textContent = `${pretty(original)} =`;
         expression = String(Number.isInteger(result) ? result : Number(result.toFixed(10)));
         updateDisplay();
@@ -402,45 +415,34 @@
       updateDisplay();
     }
 
-    keys.addEventListener('click', (event) => {
+    keys.addEventListener('click', event => {
       const button = event.target.closest('button');
       if (!button) return;
-
       addRipple(button, event);
-
       if (button.dataset.action === 'clear') {
         expression = '';
         history.textContent = '';
         updateDisplay();
         return;
       }
-
       if (button.dataset.action === 'equals') {
         calculate();
         return;
       }
-
       handleValue(button.dataset.value);
     });
 
-    document.addEventListener('keydown', (event) => {
-      const keyMap = {
-        Enter: 'equals',
-        '=': 'equals',
-        Escape: 'clear',
-        Backspace: 'backspace'
-      };
-
+    document.addEventListener('keydown', event => {
       if (/^[0-9+\-*/().]$/.test(event.key)) {
         handleValue(event.key);
-      } else if (keyMap[event.key] === 'equals') {
+      } else if (event.key === 'Enter' || event.key === '=') {
         event.preventDefault();
         calculate();
-      } else if (keyMap[event.key] === 'clear') {
+      } else if (event.key === 'Escape') {
         expression = '';
         history.textContent = '';
         updateDisplay();
-      } else if (keyMap[event.key] === 'backspace' && expression !== 'Error') {
+      } else if (event.key === 'Backspace' && expression !== 'Error') {
         expression = expression.slice(0, -1);
         updateDisplay();
       }
