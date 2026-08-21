@@ -3,58 +3,312 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic Calculator</title>
+  <title>Animated Calculator</title>
   <style>
+    :root {
+      --text: #f8fbff;
+      --muted: rgba(248, 251, 255, 0.58);
+      --panel: rgba(14, 18, 32, 0.78);
+      --key: rgba(255, 255, 255, 0.10);
+      --key-hover: rgba(255, 255, 255, 0.18);
+      --accent-a: #ff9a3c;
+      --accent-b: #ff4f81;
+      --equal-a: #46e6a7;
+      --equal-b: #35b8ff;
+      --clear-a: #ff5c68;
+      --clear-b: #ff7a45;
+    }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       min-height: 100vh;
       display: grid;
       place-items: center;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      overflow: hidden;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(82, 111, 255, 0.34), transparent 30%),
+        radial-gradient(circle at 85% 25%, rgba(255, 79, 129, 0.28), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(70, 230, 167, 0.20), transparent 35%),
+        #080b14;
     }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 32rem;
+      height: 32rem;
+      border-radius: 50%;
+      filter: blur(75px);
+      opacity: 0.22;
+      z-index: -1;
+      animation: drift 11s ease-in-out infinite alternate;
+    }
+
+    body::before {
+      background: #536dff;
+      top: -14rem;
+      left: -10rem;
+    }
+
+    body::after {
+      background: #ff4f81;
+      right: -13rem;
+      bottom: -15rem;
+      animation-delay: -4s;
+    }
+
     .calculator {
-      width: min(92vw, 340px);
-      background: #1f1f1f;
+      width: min(92vw, 370px);
       padding: 18px;
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow:
+        0 28px 70px rgba(0, 0, 0, 0.48),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(22px);
+      animation: calculatorIn 700ms cubic-bezier(.2,.85,.25,1) both, float 5s ease-in-out 800ms infinite;
     }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2px 4px 14px;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--equal-a);
+      box-shadow: 0 0 0 0 rgba(70, 230, 167, .5);
+      animation: ping 1.8s infinite;
+    }
+
+    .display-wrap {
+      position: relative;
+      min-height: 108px;
+      margin-bottom: 14px;
+      padding: 16px 16px 13px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.045));
+      box-shadow: inset 0 1px 14px rgba(0, 0, 0, .24);
+    }
+
+    .display-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.28) 45%, transparent 70%);
+      transform: translateX(-120%);
+    }
+
+    .history {
+      height: 22px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: right;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
     #display {
       width: 100%;
-      height: 76px;
+      height: 54px;
+      padding: 0;
       border: 0;
-      border-radius: 10px;
-      margin-bottom: 14px;
-      padding: 12px;
+      outline: 0;
       text-align: right;
-      font-size: 2rem;
-      background: #fff;
-      color: #111;
+      font-size: clamp(2rem, 9vw, 2.8rem);
+      font-weight: 650;
+      letter-spacing: -0.035em;
+      color: #fff;
+      background: transparent;
     }
+
+    .display-wrap.result-pop {
+      animation: resultPop 520ms cubic-bezier(.2,.9,.25,1);
+      box-shadow:
+        inset 0 1px 14px rgba(0, 0, 0, .24),
+        0 0 36px rgba(70, 230, 167, .18);
+    }
+
+    .display-wrap.result-pop::after {
+      opacity: 1;
+      animation: shine 520ms ease-out;
+    }
+
+    .display-wrap.error-pop {
+      animation: errorShake 360ms ease-in-out;
+      box-shadow: 0 0 30px rgba(255, 92, 104, .24);
+    }
+
     .keys {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 11px;
     }
+
     button {
-      border: 0;
-      border-radius: 10px;
-      padding: 18px 8px;
-      font-size: 1.2rem;
+      position: relative;
+      min-height: 62px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 17px;
       cursor: pointer;
-      background: #e8e8e8;
+      color: var(--text);
+      background: var(--key);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        0 6px 18px rgba(0,0,0,.12);
+      font: inherit;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition:
+        transform 150ms ease,
+        background 180ms ease,
+        box-shadow 180ms ease,
+        border-color 180ms ease;
+      -webkit-tap-highlight-color: transparent;
     }
-    button:hover { filter: brightness(.92); }
-    .operator { background: #ffb347; }
-    .clear { background: #ef6b6b; color: white; }
-    .equals { background: #67c587; color: white; grid-column: span 2; }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.025);
+      background: var(--key-hover);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.1),
+        0 12px 24px rgba(0,0,0,.20),
+        0 0 22px rgba(116, 143, 255, 0.12);
+    }
+
+    button:active,
+    button.is-pressed {
+      transform: translateY(1px) scale(.94);
+      transition-duration: 70ms;
+    }
+
+    .operator {
+      background: linear-gradient(135deg, var(--accent-a), var(--accent-b));
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(255, 79, 129, .18);
+    }
+
+    .operator:hover {
+      background: linear-gradient(135deg, #ffb34f, #ff618e);
+      box-shadow: 0 12px 28px rgba(255, 79, 129, .30);
+    }
+
+    .clear {
+      background: linear-gradient(135deg, var(--clear-a), var(--clear-b));
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(255, 92, 104, .18);
+    }
+
+    .equals {
+      grid-column: span 2;
+      background: linear-gradient(135deg, var(--equal-a), var(--equal-b));
+      color: #04120e;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(53, 184, 255, .18);
+    }
+
+    .equals:hover {
+      background: linear-gradient(135deg, #66f3ba, #55c6ff);
+      box-shadow:
+        0 12px 30px rgba(53, 184, 255, .26),
+        0 0 26px rgba(70, 230, 167, .20);
+    }
+
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      background: rgba(255,255,255,.46);
+      transform: translate(-50%, -50%) scale(0);
+      animation: ripple 520ms ease-out forwards;
+    }
+
+    @keyframes ripple {
+      to { transform: translate(-50%, -50%) scale(3.6); opacity: 0; }
+    }
+
+    @keyframes calculatorIn {
+      from { opacity: 0; transform: translateY(28px) scale(.94); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes float {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -6px; }
+    }
+
+    @keyframes drift {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(70px, 45px, 0) scale(1.15); }
+    }
+
+    @keyframes ping {
+      0% { box-shadow: 0 0 0 0 rgba(70, 230, 167, .48); }
+      70% { box-shadow: 0 0 0 9px rgba(70, 230, 167, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(70, 230, 167, 0); }
+    }
+
+    @keyframes resultPop {
+      0% { transform: scale(1); }
+      45% { transform: scale(1.035); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes shine {
+      from { transform: translateX(-120%); }
+      to { transform: translateX(120%); }
+    }
+
+    @keyframes errorShake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-7px); }
+      50% { transform: translateX(7px); }
+      75% { transform: translateX(-4px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <main class="calculator">
-    <input id="display" type="text" value="0" readonly aria-label="Calculator display" />
+  <main class="calculator" aria-label="Animated calculator">
+    <div class="brand">
+      <span>Calculator</span>
+      <span class="live-dot" aria-hidden="true"></span>
+    </div>
+
+    <div class="display-wrap" id="displayWrap">
+      <div class="history" id="history" aria-live="polite"></div>
+      <input id="display" type="text" value="0" readonly aria-label="Calculator display" />
+    </div>
+
     <div class="keys">
       <button class="clear" data-action="clear">C</button>
       <button data-value="(">(</button>
@@ -84,38 +338,112 @@
 
   <script>
     const display = document.getElementById('display');
+    const history = document.getElementById('history');
+    const displayWrap = document.getElementById('displayWrap');
+    const keys = document.querySelector('.keys');
     let expression = '';
 
-    function updateDisplay() {
-      display.value = expression || '0';
+    function pretty(value) {
+      return value.replaceAll('*', '×').replaceAll('/', '÷');
     }
 
-    document.querySelector('.keys').addEventListener('click', (event) => {
+    function updateDisplay(value = expression || '0') {
+      display.value = pretty(String(value));
+    }
+
+    function animateDisplay(type) {
+      displayWrap.classList.remove('result-pop', 'error-pop');
+      void displayWrap.offsetWidth;
+      displayWrap.classList.add(type);
+      setTimeout(() => displayWrap.classList.remove(type), 560);
+    }
+
+    function addRipple(button, event) {
+      const rect = button.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.width = `${size}px`;
+      ripple.style.height = `${size}px`;
+      ripple.style.left = `${event.clientX - rect.left}px`;
+      ripple.style.top = `${event.clientY - rect.top}px`;
+      button.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
+    }
+
+    function calculate() {
+      if (!expression) return;
+
+      const original = expression;
+      const safeExpression = expression.replace(/[^0-9+\-*/().]/g, '');
+
+      try {
+        const result = Function(`"use strict"; return (${safeExpression})`)();
+        if (!Number.isFinite(result)) throw new Error('Invalid result');
+
+        history.textContent = `${pretty(original)} =`;
+        expression = String(Number.isInteger(result) ? result : Number(result.toFixed(10)));
+        updateDisplay();
+        animateDisplay('result-pop');
+      } catch {
+        history.textContent = pretty(original);
+        expression = 'Error';
+        updateDisplay('Error');
+        animateDisplay('error-pop');
+      }
+    }
+
+    function handleValue(value) {
+      if (expression === 'Error') {
+        expression = '';
+        history.textContent = '';
+      }
+      expression += value;
+      updateDisplay();
+    }
+
+    keys.addEventListener('click', (event) => {
       const button = event.target.closest('button');
       if (!button) return;
 
+      addRipple(button, event);
+
       if (button.dataset.action === 'clear') {
         expression = '';
+        history.textContent = '';
         updateDisplay();
         return;
       }
 
       if (button.dataset.action === 'equals') {
-        try {
-          if (!expression) return;
-          const safeExpression = expression.replace(/[^0-9+\-*/().]/g, '');
-          const result = Function(`"use strict"; return (${safeExpression})`)();
-          expression = Number.isFinite(result) ? String(result) : 'Error';
-        } catch {
-          expression = 'Error';
-        }
-        updateDisplay();
+        calculate();
         return;
       }
 
-      if (expression === 'Error') expression = '';
-      expression += button.dataset.value;
-      updateDisplay();
+      handleValue(button.dataset.value);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      const keyMap = {
+        Enter: 'equals',
+        '=': 'equals',
+        Escape: 'clear',
+        Backspace: 'backspace'
+      };
+
+      if (/^[0-9+\-*/().]$/.test(event.key)) {
+        handleValue(event.key);
+      } else if (keyMap[event.key] === 'equals') {
+        event.preventDefault();
+        calculate();
+      } else if (keyMap[event.key] === 'clear') {
+        expression = '';
+        history.textContent = '';
+        updateDisplay();
+      } else if (keyMap[event.key] === 'backspace' && expression !== 'Error') {
+        expression = expression.slice(0, -1);
+        updateDisplay();
+      }
     });
   </script>
 </body>
