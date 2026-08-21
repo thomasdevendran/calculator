@@ -14,7 +14,7 @@
     header{background:var(--dark);color:#fff;padding:18px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;position:sticky;top:0;z-index:10}
     .brand{font-weight:900;letter-spacing:.04em}.brand span{color:var(--accent)}
     .demo{font-size:.8rem;color:#c8cdd4}
-    .app{display:grid;grid-template-columns:minmax(370px,480px) minmax(500px,1fr);gap:24px;padding:24px;max-width:1600px;margin:auto}
+    .app{display:grid;grid-template-columns:minmax(390px,500px) minmax(520px,1fr);gap:24px;padding:24px;max-width:1640px;margin:auto}
     .panel,.preview{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px rgba(20,25,35,.06)}
     .panel{padding:22px}.preview{overflow:hidden;align-self:start;position:sticky;top:92px}
     h1{font-size:1.4rem;margin:0 0 5px}.sub{color:var(--muted);font-size:.9rem;margin-bottom:18px;line-height:1.45}
@@ -30,28 +30,37 @@
     .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
     .btn{border:0;border-radius:10px;padding:10px 13px;font-weight:850;cursor:pointer}.primary{background:var(--accent);color:#111}.secondary{background:#eceff2;color:#15171b}.outline{background:#fff;border:1px solid #cbd1d8}.danger{background:#fff1ef;color:var(--danger);border:1px solid #f0d1cc}
     .request-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.chip{background:#f0f2f4;border-radius:999px;padding:6px 9px;font-size:.75rem;font-weight:800}
+
     .item-editor{border:1px solid var(--line);border-radius:14px;margin-top:14px;overflow:hidden;background:#fff}
     .item-editor-head{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#f7f8fa;padding:11px 13px;border-bottom:1px solid var(--line)}
     .item-number{font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:900}
     .item-editor-body{padding:14px}
+    .subsection{margin-top:16px;padding-top:14px;border-top:1px solid #e8ebef}.subsection-title{font-size:.78rem;font-weight:900;margin-bottom:8px;color:#30353d}
     .upload{margin-top:12px;border:1.5px dashed #bfc6cf;border-radius:12px;padding:13px;background:#fafbfc}.upload input{border:0;padding:0;background:transparent}
     .builder-images{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:9px}.builder-images img{width:100%;height:68px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+
+    .extras-list{display:grid;gap:8px}.extra-row{display:grid;grid-template-columns:minmax(0,1fr) 76px 120px 38px;gap:8px;align-items:end;background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:9px}.extra-row .mini-label{font-size:.68rem;font-weight:800;color:var(--muted);margin-bottom:4px}.extra-row input{padding:9px}.icon-btn{height:39px;border:1px solid #efcbc5;background:#fff1ef;color:var(--danger);border-radius:8px;cursor:pointer;font-weight:900}
+    .empty-extras{padding:10px 12px;background:#fafbfc;border:1px dashed #cdd3da;border-radius:10px;color:var(--muted);font-size:.78rem}
+
     .item-calc{margin-top:12px;background:#111318;color:#fff;border-radius:10px;padding:11px 12px;display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:.84rem}.item-calc .muted{color:#bbc1c9}.item-calc .total{border-top:1px solid #343941;margin-top:4px;padding-top:8px;font-weight:900}
     .grand-calc{margin-top:14px;background:#111318;color:#fff;border-radius:12px;padding:14px;display:flex;justify-content:space-between;gap:15px;align-items:center}.grand-calc small{display:block;color:#bbc1c9;margin-bottom:3px}.grand-calc strong{font-size:1.25rem}
+    .print-hint{font-size:.74rem;color:var(--muted);margin-top:8px}
 
     .quote-head{padding:28px 32px;background:#111318;color:#fff;display:flex;justify-content:space-between;align-items:flex-start}.quote-logo{font-weight:950;font-size:1.28rem}.quote-logo span{color:var(--accent)}.quote-ref{text-align:right;font-size:.76rem;color:#c6cbd2}
     .quote-body{padding:30px 34px 38px}.eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:900}.vehicle{font-size:1.6rem;font-weight:900;margin:4px 0 12px}.requested-line{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:24px}
     .product-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:18px}.product-card.alt-card{border-style:dashed}.quote-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#edf0f3}.quote-gallery.single{grid-template-columns:1fr}.quote-gallery img{width:100%;height:210px;object-fit:cover;display:block}.quote-gallery.single img{height:280px}.no-image{height:150px;display:grid;place-items:center;color:#7a828d;background:linear-gradient(135deg,#edf0f3,#fafbfc)}
     .product-content{padding:20px}.tag{display:inline-block;background:#eef0f2;border-radius:999px;padding:6px 9px;font-size:.72rem;font-weight:900;margin:0 6px 10px 0}.alt-tag{background:#fff6bd}.product-title{font-size:1.25rem;font-weight:900;margin-bottom:3px}.sku{color:var(--muted);font-size:.8rem;margin-bottom:13px}.desc{line-height:1.55;color:#343941}.features{margin:13px 0 0;padding-left:18px;color:#353a42}.features li{margin:6px 0;line-height:1.4}
-    .price-table{margin-top:17px;border-top:1px solid var(--line)}.price-row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid #edf0f2}.price-row.total{font-size:1.15rem;font-weight:900;border-bottom:0;padding-top:15px}
+    .line-table{margin-top:18px;border-top:1px solid var(--line)}.line-head,.line-row{display:grid;grid-template-columns:minmax(0,1fr) 62px 118px;gap:10px;align-items:center}.line-head{padding:9px 0 7px;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:900}.line-row{padding:10px 0;border-top:1px solid #edf0f2}.line-row .qty{text-align:center}.line-row .amount{text-align:right;font-weight:800}.line-row.install-row{font-weight:700}.package-total{display:flex;justify-content:space-between;gap:18px;padding:15px 0 2px;border-top:2px solid #dfe3e8;margin-top:4px;font-size:1.15rem;font-weight:950}
     .note-box{margin-top:16px;background:#fffce9;border-left:4px solid var(--accent);padding:11px 13px;font-size:.84rem;color:#4c5159}.availability{color:var(--good);font-weight:900}
     .quote-total{margin-top:24px;background:#111318;color:#fff;border-radius:14px;padding:17px 19px;display:flex;justify-content:space-between;align-items:center}.quote-total span{color:#cbd0d6}.quote-total strong{font-size:1.45rem}
-    .email-preview{margin-top:24px;padding:18px;border:1px solid var(--line);border-radius:12px;background:#fafbfc;white-space:pre-wrap;font-size:.88rem;line-height:1.55}
-    .email-title{font-weight:900;margin-bottom:8px}
+    .email-preview{margin-top:24px;padding:18px;border:1px solid var(--line);border-radius:12px;background:#fafbfc;white-space:pre-wrap;font-size:.88rem;line-height:1.55}.email-title{font-weight:900;margin-bottom:8px}
 
     @media(max-width:1050px){.app{grid-template-columns:1fr}.preview{position:static}.grid3{grid-template-columns:1fr 1fr}}
-    @media(max-width:620px){header{padding:14px 16px}.app{padding:12px}.panel{padding:16px}.grid2,.grid3{grid-template-columns:1fr}.quote-body{padding:22px 18px}.quote-head{padding:22px 18px}.builder-images{grid-template-columns:repeat(3,1fr)}.quote-gallery img,.quote-gallery.single img{height:190px}}
-    @media print{header,.panel{display:none!important}.app{display:block;padding:0;max-width:none}.preview{position:static;border:0;box-shadow:none}.email-preview{display:none}.quote-body{padding:24px}.product-card{break-inside:avoid}}
+    @media(max-width:680px){header{padding:14px 16px}.app{padding:12px}.panel{padding:16px}.grid2,.grid3{grid-template-columns:1fr}.quote-body{padding:22px 18px}.quote-head{padding:22px 18px}.builder-images{grid-template-columns:repeat(3,1fr)}.quote-gallery img,.quote-gallery.single img{height:190px}.extra-row{grid-template-columns:1fr 70px 110px 38px}.line-head,.line-row{grid-template-columns:minmax(0,1fr) 48px 100px}}
+    @page{margin:12mm}
+    @media print{
+      header,.panel{display:none!important}.app{display:block;padding:0;max-width:none}.preview{position:static;border:0;box-shadow:none}.email-preview{display:none}.quote-body{padding:18px 0}.quote-head{padding:22px 24px}.product-card{break-inside:auto}.quote-gallery,.product-title,.package-total,.quote-total,.line-row{break-inside:avoid}.quote-gallery img{height:180px}.quote-gallery.single img{height:230px}
+    }
   </style>
 </head>
 <body>
@@ -63,18 +72,20 @@
 <div class="app">
   <section class="panel">
     <h1>Build a customer quote</h1>
-    <div class="sub">Add everything the customer requested, then build one or more product options. Product descriptions, features, pictures and pricing are carried into the customer quote and email.</div>
+    <div class="sub">Enter the verified supplier details, build simple products or multi-part packages, and preview exactly what the customer will receive.</div>
 
     <div class="section">
       <div class="section-title">1 · Customer & vehicle</div>
       <div class="grid2">
-        <div><label>Customer name</label><input id="customer" value="John" /></div>
+        <div><label>First name</label><input id="customer" value="John" /></div>
+        <div><label>Surname</label><input id="surname" placeholder="Customer surname" /></div>
         <div><label>Year</label><input id="year" value="2024" /></div>
         <div><label>Make</label><input id="make" value="Ford" /></div>
         <div><label>Model</label><input id="model" value="Ranger" /></div>
         <div><label>Variant</label><input id="variant" value="Wildtrak" /></div>
-        <div class="money"><label>Labour rate / hour</label><input id="labour" type="number" value="165" min="0" step="1" /></div>
+        <div class="money"><label>Labour rate / hour · internal</label><input id="labour" type="number" value="165" min="0" step="1" /></div>
       </div>
+      <div class="hint">Labour rate and recommended hours are internal only. The customer sees only the final installation price.</div>
     </div>
 
     <div class="section">
@@ -87,13 +98,11 @@ Snorkel</textarea>
     </div>
 
     <div class="section">
-      <div class="section-title">3 · Products & options</div>
+      <div class="section-title">3 · Products, packages & options</div>
       <div id="items"></div>
-      <div class="actions">
-        <button class="btn primary" id="addItem">+ Add another product</button>
-      </div>
+      <div class="actions"><button class="btn primary" id="addItem">+ Add another product / package</button></div>
       <div class="grand-calc">
-        <div><small>Included products + installation</small><strong>Quote total</strong></div>
+        <div><small>Included products + required items + installation</small><strong>Quote total</strong></div>
         <strong id="builderGrand">$0.00</strong>
       </div>
     </div>
@@ -102,6 +111,7 @@ Snorkel</textarea>
       <button class="btn primary" id="copyEmail">Copy email reply</button>
       <button class="btn secondary" onclick="window.print()">Print / Save PDF</button>
     </div>
+    <div class="print-hint">For a clean PDF, turn off “Headers and footers” in your browser’s print dialog.</div>
   </section>
 
   <section class="preview">
@@ -129,29 +139,45 @@ Snorkel</textarea>
     </div>
     <div class="item-editor-body">
       <div class="grid2">
-        <div><label>Requested item / category</label><input data-field="category" placeholder="e.g. Bull Bar" /></div>
+        <div><label>Requested item / category</label><input data-field="category" placeholder="e.g. Suspension Upgrade" /></div>
         <div><label>How to use this option</label><select data-field="role"><option value="included">Included in main quote</option><option value="alternative">Alternative option</option></select></div>
-        <div><label>Brand</label><input data-field="brand" placeholder="e.g. TJM" /></div>
-        <div><label>Product name</label><input data-field="product" placeholder="Product name" /></div>
+        <div><label>Brand</label><input data-field="brand" placeholder="e.g. TJM / XGS / Hayman Reese" /></div>
+        <div><label>Product / package name</label><input data-field="product" placeholder="Product or package name" /></div>
         <div><label>SKU / Part No.</label><input data-field="sku" placeholder="Dealer SKU / part number" /></div>
         <div><label>Availability</label><select data-field="stock"><option>Check stock</option><option>In stock</option><option>Low stock</option><option>Out of stock</option><option>Order required</option></select></div>
       </div>
       <div style="margin-top:11px"><label>Compatibility</label><input data-field="compatibility" placeholder="Vehicle compatibility" /></div>
-      <div style="margin-top:11px"><label>Customer-facing product description</label><textarea data-field="description" placeholder="Paste or simplify the manufacturer description"></textarea></div>
-      <div style="margin-top:11px"><label>Key features · one per line</label><textarea data-field="features" placeholder="ADR compliant&#10;OE safety system compatible&#10;Winch compatible"></textarea></div>
+      <div style="margin-top:11px"><label>Customer-facing product / package description</label><textarea data-field="description" placeholder="Paste or simplify the manufacturer description"></textarea></div>
+      <div style="margin-top:11px"><label>Key features / package notes · one per line</label><textarea data-field="features" placeholder="40mm increased ride height&#10;+300kg constant rear load&#10;Wheel alignment included"></textarea></div>
+
       <div class="upload">
         <label>Product pictures · select multiple</label>
         <input class="image-input" type="file" accept="image/*" multiple />
-        <div class="hint">You can select several manufacturer images. Selecting more later adds to the existing pictures.</div>
+        <div class="hint">Selecting more pictures later adds to the existing gallery.</div>
         <div class="builder-images"></div>
         <div class="actions image-actions" style="display:none"><button class="btn outline clear-images" type="button">Clear pictures</button></div>
       </div>
-      <div class="grid2" style="margin-top:12px">
-        <div class="money"><label>Retail price</label><input data-field="retail" type="number" min="0" step="0.01" placeholder="0.00" /></div>
-        <div><label>Recommended install hours</label><input data-field="hours" type="number" min="0" step="0.25" placeholder="0" /></div>
+
+      <div class="subsection">
+        <div class="subsection-title">Main product price & installation</div>
+        <div class="grid3">
+          <div class="money"><label>Main product retail · optional</label><input data-field="retail" type="number" min="0" step="0.01" placeholder="0.00" /></div>
+          <div><label>Recommended install hours · internal</label><input data-field="hours" type="number" min="0" step="0.25" placeholder="0" /></div>
+          <div class="money"><label>Installation price override · optional</label><input data-field="installOverride" type="number" min="0" step="0.01" placeholder="Auto" /></div>
+        </div>
+        <div class="hint">Leave installation override blank to calculate from internal hours × labour rate. The customer never sees the hours.</div>
       </div>
+
+      <div class="subsection">
+        <div class="subsection-title">Required / additional items</div>
+        <div class="hint" style="margin-bottom:9px">Use this for fitting kits, suspension components, sockets, freight, wheel alignment and any other item required to complete this job. Enter the total for the full quantity.</div>
+        <div class="extras-list"></div>
+        <div class="actions"><button class="btn outline add-extra" type="button">+ Add required item</button></div>
+      </div>
+
       <div class="item-calc">
-        <span class="muted">Product</span><span data-calc="product">$0.00</span>
+        <span class="muted">Main product</span><span data-calc="product">$0.00</span>
+        <span class="muted">Required items</span><span data-calc="extras">$0.00</span>
         <span class="muted">Installation</span><span data-calc="install">$0.00</span>
         <span class="total">Total fitted</span><span class="total" data-calc="total">$0.00</span>
       </div>
@@ -162,7 +188,7 @@ Snorkel</textarea>
 <script>
   const $ = id => document.getElementById(id);
   const money = n => new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(Number(n||0));
-  const globalFields = ['customer','year','make','model','variant','labour','requested'];
+  const globalFields = ['customer','surname','year','make','model','variant','labour','requested'];
   $('quoteDate').textContent = new Date().toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'});
   let itemCount = 0;
 
@@ -170,20 +196,36 @@ Snorkel</textarea>
     return $('requested').value.split(/\n|,/).map(v=>v.trim()).filter(Boolean);
   }
 
+  function fullName(){
+    return [$('customer').value.trim(),$('surname').value.trim()].filter(Boolean).join(' ') || 'Customer';
+  }
+
   function value(card, field){
     const node = card.querySelector(`[data-field="${field}"]`);
     return node ? node.value.trim() : '';
+  }
+
+  function extraData(card){
+    return [...card.querySelectorAll('.extra-row')].map(row=>({
+      description:row.querySelector('[data-extra="description"]').value.trim(),
+      qty:Number(row.querySelector('[data-extra="qty"]').value||0),
+      total:Number(row.querySelector('[data-extra="total"]').value||0)
+    })).filter(x=>x.description || x.total);
   }
 
   function itemData(card){
     const retail = Number(value(card,'retail')||0);
     const hours = Number(value(card,'hours')||0);
     const labour = Number($('labour').value||0);
+    const overrideRaw = value(card,'installOverride');
+    const install = overrideRaw !== '' ? Number(overrideRaw||0) : hours*labour;
+    const extras = extraData(card);
+    const extrasTotal = extras.reduce((sum,x)=>sum+x.total,0);
     return {
       category:value(card,'category'), role:value(card,'role'), brand:value(card,'brand'), product:value(card,'product'),
       sku:value(card,'sku'), stock:value(card,'stock'), compatibility:value(card,'compatibility'),
       description:value(card,'description'), features:value(card,'features').split('\n').map(v=>v.trim()).filter(Boolean),
-      retail, hours, install:hours*labour, total:retail+(hours*labour), images:card._images||[]
+      retail,hours,install,extras,extrasTotal,total:retail+extrasTotal+install,images:card._images||[]
     };
   }
 
@@ -195,15 +237,39 @@ Snorkel</textarea>
     card.dataset.index = itemCount;
     $('items').appendChild(card);
     const defaults = {
-      category:'',role:'included',brand:'',product:'',sku:'',stock:'Check stock',compatibility:'',description:'',features:'',retail:'',hours:'',...seed
+      category:'',role:'included',brand:'',product:'',sku:'',stock:'Check stock',compatibility:'',description:'',features:'',retail:'',hours:'',installOverride:'',...seed
     };
     Object.entries(defaults).forEach(([key,val])=>{
+      if(key==='extras') return;
       const node = card.querySelector(`[data-field="${key}"]`);
       if(node) node.value = val;
     });
+    (seed.extras||[]).forEach(x=>addExtra(card,x));
     wireCard(card);
+    renderExtrasEmptyState(card);
     renumber();
     update();
+  }
+
+  function addExtra(card, seed={}){
+    const empty=card.querySelector('.empty-extras');if(empty) empty.remove();
+    const row=document.createElement('div');
+    row.className='extra-row';
+    row.innerHTML=`
+      <div><div class="mini-label">Description</div><input data-extra="description" placeholder="Required item / service" value="${escapeAttr(seed.description||'')}" /></div>
+      <div><div class="mini-label">Qty</div><input data-extra="qty" type="number" min="0" step="1" value="${seed.qty ?? 1}" /></div>
+      <div class="money"><div class="mini-label">Line total</div><input data-extra="total" type="number" min="0" step="0.01" value="${seed.total ?? ''}" /></div>
+      <button class="icon-btn remove-extra" type="button" title="Remove item">×</button>`;
+    card.querySelector('.extras-list').appendChild(row);
+    row.addEventListener('input',update);
+    row.addEventListener('change',update);
+    row.querySelector('.remove-extra').addEventListener('click',()=>{row.remove();renderExtrasEmptyState(card);update();});
+    update();
+  }
+
+  function renderExtrasEmptyState(card){
+    const list=card.querySelector('.extras-list');
+    if(!list.querySelector('.extra-row')) list.innerHTML='<div class="empty-extras">No additional required items yet.</div>';
   }
 
   function wireCard(card){
@@ -213,12 +279,12 @@ Snorkel</textarea>
       if(document.querySelectorAll('.item-editor').length===1) return;
       card.remove();renumber();update();
     });
+    card.querySelector('.add-extra').addEventListener('click',()=>addExtra(card));
     card.querySelector('.image-input').addEventListener('change', async e=>{
       const files=[...e.target.files];
       for(const file of files){
         if(!file.type.startsWith('image/')) continue;
-        const data=await fileToData(file);
-        card._images.push(data);
+        card._images.push(await fileToData(file));
       }
       e.target.value='';
       renderBuilderImages(card);update();
@@ -252,10 +318,22 @@ Snorkel</textarea>
     return `<div class="${cls}">${images.slice(0,6).map(src=>`<img src="${src}" alt="Product image" />`).join('')}</div>`;
   }
 
+  function renderLineTable(item,title){
+    const rows=[];
+    if(item.retail) rows.push({description:title||'Product',qty:1,total:item.retail});
+    item.extras.forEach(x=>rows.push(x));
+    if(item.install) rows.push({description:'Installation',qty:1,total:item.install,install:true});
+    if(!rows.length) return '<div class="line-table"><div class="line-row"><span>Pricing to be confirmed</span><span></span><span class="amount">—</span></div></div>';
+    return `<div class="line-table">
+      <div class="line-head"><span>Description</span><span style="text-align:center">Qty</span><span style="text-align:right">Total</span></div>
+      ${rows.map(r=>`<div class="line-row ${r.install?'install-row':''}"><span>${escapeHtml(r.description||'Item')}</span><span class="qty">${formatQty(r.qty)}</span><span class="amount">${money(r.total)}</span></div>`).join('')}
+      <div class="package-total"><span>Total fitted</span><span>${money(item.total)}</span></div>
+    </div>`;
+  }
+
   function renderQuoteItem(item){
     const isAlt=item.role==='alternative';
     const title=[item.brand,item.product].filter(Boolean).join(' ')||'Product option';
-    const hrs=item.hours?` · ${item.hours} hr${item.hours===1?'':'s'}`:'';
     return `<div class="product-card ${isAlt?'alt-card':''}">
       ${renderGallery(item.images)}
       <div class="product-content">
@@ -264,31 +342,37 @@ Snorkel</textarea>
         <div class="sku">SKU: ${escapeHtml(item.sku||'To be confirmed')}${item.compatibility?` · ${escapeHtml(item.compatibility)}`:''}</div>
         ${item.description?`<div class="desc">${escapeHtml(item.description)}</div>`:''}
         ${item.features.length?`<ul class="features">${item.features.map(f=>`<li>${escapeHtml(f)}</li>`).join('')}</ul>`:''}
-        <div class="price-table">
-          <div class="price-row"><span>Product</span><strong>${item.retail?money(item.retail):'Price pending'}</strong></div>
-          <div class="price-row"><span>Professional installation${hrs}</span><strong>${item.hours?money(item.install):'Price pending'}</strong></div>
-          <div class="price-row total"><span>Total fitted</span><span>${item.retail||item.hours?money(item.total):'Price pending'}</span></div>
-        </div>
+        ${renderLineTable(item,title)}
         <div class="note-box">Availability: <span class="availability">${escapeHtml(item.stock||'Check stock')}</span>. Final compatibility and stock are confirmed from the manufacturer dealer portal before booking.</div>
       </div>
     </div>`;
   }
 
+  function emailItemLines(item,title){
+    let out='';
+    if(item.retail) out+=`Product: ${money(item.retail)}\n`;
+    if(item.extras.length){
+      out+='Required items:\n';
+      item.extras.forEach(x=>{out+=`• ${x.description}${x.qty?` × ${formatQty(x.qty)}`:''}: ${money(x.total)}\n`;});
+    }
+    if(item.install) out+=`Installation: ${money(item.install)}\n`;
+    if(item.retail||item.extras.length||item.install) out+=`Total fitted: ${money(item.total)}\n`;
+    return out;
+  }
+
   function emailText(items, grand){
-    const customer=$('customer').value.trim()||'there';
+    const first=$('customer').value.trim()||'there';
     const vehicle=[$('year').value,$('make').value,$('model').value,$('variant').value].map(v=>v.trim()).filter(Boolean).join(' ');
     const req=requestedItems();
     const main=items.filter(i=>i.role==='included');
     const alternatives=items.filter(i=>i.role==='alternative');
-    let out=`Hi ${customer},\n\nThank you for your enquiry${vehicle?` for your ${vehicle}`:''}${req.length?` regarding ${naturalList(req)}`:''}.\n\nI have put together the following options for your consideration.\n`;
+    let out=`Hi ${first},\n\nThank you for your enquiry${vehicle?` for your ${vehicle}`:''}${req.length?` regarding ${naturalList(req)}`:''}.\n\nI have put together the following options for your consideration.\n`;
     main.forEach((i,idx)=>{
       const title=[i.brand,i.product].filter(Boolean).join(' ')||`Option ${idx+1}`;
       out+=`\n${idx+1}. ${title}${i.category?` — ${i.category}`:''}\n`;
       if(i.description) out+=`${i.description}\n`;
-      if(i.features.length){out+='Key features:\n'+i.features.map(f=>`• ${f}`).join('\n')+'\n';}
-      if(i.retail) out+=`Product: ${money(i.retail)}\n`;
-      if(i.hours) out+=`Installation (${i.hours} hr${i.hours===1?'':'s'}): ${money(i.install)}\n`;
-      if(i.retail||i.hours) out+=`Total fitted: ${money(i.total)}\n`;
+      if(i.features.length) out+='Key features / notes:\n'+i.features.map(f=>`• ${f}`).join('\n')+'\n';
+      out+=emailItemLines(i,title);
       if(i.stock) out+=`Availability: ${i.stock}\n`;
     });
     if(main.length>1) out+=`\nTotal fitted for the included items: ${money(grand)}\n`;
@@ -298,8 +382,8 @@ Snorkel</textarea>
         const title=[i.brand,i.product].filter(Boolean).join(' ')||`Alternative ${idx+1}`;
         out+=`\n${title}${i.category?` — ${i.category}`:''}\n`;
         if(i.description) out+=`${i.description}\n`;
-        if(i.features.length) out+='Key features:\n'+i.features.map(f=>`• ${f}`).join('\n')+'\n';
-        if(i.retail||i.hours) out+=`Total fitted: ${money(i.total)}\n`;
+        if(i.features.length) out+='Key features / notes:\n'+i.features.map(f=>`• ${f}`).join('\n')+'\n';
+        out+=emailItemLines(i,title);
       });
     }
     out+='\nPlease let me know which option you prefer and we can confirm current availability and arrange installation.\n\nKind regards,\nComplete 4x4';
@@ -312,19 +396,28 @@ Snorkel</textarea>
     return `${arr.slice(0,-1).join(', ')}, and ${arr[arr.length-1]}`;
   }
 
+  function formatQty(q){
+    const n=Number(q||0);return Number.isInteger(n)?String(n):String(Number(n.toFixed(2)));
+  }
+
   function escapeHtml(s=''){
     return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   }
 
+  function escapeAttr(s=''){
+    return escapeHtml(s).replace(/`/g,'&#96;');
+  }
+
   function update(){
     renderRequestChips();
-    $('pCustomer').textContent=$('customer').value||'Customer';
+    $('pCustomer').textContent=fullName();
     $('pVehicle').textContent=[$('year').value,$('make').value,$('model').value,$('variant').value].map(v=>v.trim()).filter(Boolean).join(' ')||'Vehicle details';
     const cards=[...document.querySelectorAll('.item-editor')];
     const items=cards.map(itemData);
     cards.forEach((card,i)=>{
       const d=items[i];
       card.querySelector('[data-calc="product"]').textContent=money(d.retail);
+      card.querySelector('[data-calc="extras"]').textContent=money(d.extrasTotal);
       card.querySelector('[data-calc="install"]').textContent=money(d.install);
       card.querySelector('[data-calc="total"]').textContent=money(d.total);
     });
@@ -332,6 +425,7 @@ Snorkel</textarea>
     $('builderGrand').textContent=money(grand);$('pGrand').textContent=money(grand);
     $('quoteItems').innerHTML=items.map(renderQuoteItem).join('');
     $('emailPreview').textContent=emailText(items,grand);
+    document.title=`Complete 4x4 Quote - ${fullName()}`;
   }
 
   globalFields.forEach(id=>$(id).addEventListener('input',update));
