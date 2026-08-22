@@ -162,12 +162,14 @@ function productTitle(item,fallback='Product option'){
 }
 function choiceGroups(items){
   const entries=items.map((item,index)=>({item,index,key:categoryKey(item.category)}));
-  const groups=entries.filter(entry=>entry.item.role!=='alternative').map(entry=>({main:entry,alternatives:[],order:entry.index,orphan:false}));
+  const includedGroups=entries.filter(entry=>entry.item.role!=='alternative').map(entry=>({main:entry,alternatives:[],order:entry.index,orphan:false})),groups=[...includedGroups];
   const byCategory=new Map();
-  groups.forEach(group=>{if(!group.main.key)return;const matches=byCategory.get(group.main.key)||[];matches.push(group);byCategory.set(group.main.key,matches)});
+  includedGroups.forEach(group=>{if(!group.main.key)return;const matches=byCategory.get(group.main.key)||[];matches.push(group);byCategory.set(group.main.key,matches)});
   entries.filter(entry=>entry.item.role==='alternative').forEach(alternative=>{
     const matches=alternative.key?(byCategory.get(alternative.key)||[]):[];
-    const target=[...matches].reverse().find(group=>group.main.index<alternative.index)||matches[0];
+    const exactTarget=[...matches].reverse().find(group=>group.main.index<alternative.index)||matches[0];
+    const previousIndex=alternative.index-1,previousOwner=includedGroups.find(group=>group.main.index===previousIndex||group.alternatives.some(entry=>entry.index===previousIndex));
+    const target=exactTarget||previousOwner||(includedGroups.length===1?includedGroups[0]:null);
     if(target)target.alternatives.push(alternative);else groups.push({main:alternative,alternatives:[],order:alternative.index,orphan:true})
   });
   return groups.sort((a,b)=>a.order-b.order)
