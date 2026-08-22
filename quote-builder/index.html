@@ -10,16 +10,16 @@
 :root{--bg:#f5f4f2;--surface:#fff;--soft:#faf9f7;--line:#dedbd7;--dark:#000;--text:#14171a;--muted:#646a70;--orange:#ff6a06;--orange-dark:#e85e00;--orange-soft:#fff0e6;--good:#167343;--danger:#9b3427;--shadow:0 12px 30px rgba(20,23,26,.08)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Montserrat,Arial,sans-serif;background:var(--bg);color:var(--text)}body.preview-open{overflow:hidden}
 .app-header{background:var(--dark);color:#fff;position:sticky;top:0;z-index:20;border-bottom:4px solid var(--orange);box-shadow:0 4px 18px rgba(0,0,0,.2)}.header-inner{max-width:1760px;margin:auto;padding:10px 28px;display:flex;justify-content:space-between;align-items:center;gap:24px}.brand-lockup{display:flex;align-items:center;gap:20px;min-width:0}.brand-logo{display:block;width:auto;height:60px}.builder-label{border-left:1px solid #3a3a3a;padding-left:20px;line-height:1.15}.builder-label strong{display:block;font-size:1rem;font-weight:800;letter-spacing:.01em}.builder-label span{display:block;margin-top:6px;color:#aeb4bd;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-.app{max-width:1760px;margin:auto;padding:28px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;align-items:start}.workspace{min-width:0}.sidebar{position:sticky;top:108px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 5px 20px rgba(20,23,26,.05);max-height:calc(100vh - 132px);overflow:auto}.sidebar-title{font-size:.69rem;text-transform:uppercase;color:var(--muted);font-weight:900;letter-spacing:.11em;margin:2px 4px 12px}.section-nav{display:flex;flex-direction:column;gap:3px}.section-nav a{display:block;color:#30343a;text-decoration:none;font-size:.86rem;font-weight:700;padding:10px 10px 10px 13px;border-left:3px solid transparent;border-radius:4px;line-height:1.25}.section-nav a:hover,.section-nav a.active{background:var(--orange-soft);border-left-color:var(--orange);color:var(--dark)}.nav-product{border-top:1px solid var(--line);margin-top:8px;padding-top:8px}.nav-product-title{font-size:.68rem;color:var(--muted);font-weight:900;text-transform:uppercase;padding:7px 10px 3px 13px}.section-nav .nav-sub{font-size:.78rem;font-weight:600;padding:7px 10px 7px 22px}.sidebar-hint{border-top:1px solid var(--line);margin-top:14px;padding:14px 4px 2px;color:var(--muted);font-size:.75rem;line-height:1.55}
+.app{max-width:1760px;margin:auto;padding:28px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;align-items:start}.workspace{min-width:0}.sidebar{position:sticky;top:108px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;box-shadow:0 5px 20px rgba(20,23,26,.05);max-height:calc(100vh - 132px);overflow:auto}.sidebar-title{font-size:.69rem;text-transform:uppercase;color:var(--muted);font-weight:900;letter-spacing:.11em;margin:2px 4px 12px}.section-nav{display:flex;flex-direction:column;gap:3px}.section-nav a{display:block;color:#30343a;text-decoration:none;font-size:.86rem;font-weight:700;padding:10px 10px 10px 13px;border-left:3px solid transparent;border-radius:4px;line-height:1.25}.section-nav a:hover,.section-nav a.active{background:var(--orange-soft);border-left-color:var(--orange);color:var(--dark)}.nav-product{border-top:1px solid var(--line);margin-top:8px;padding-top:8px}.nav-product-title{font-size:.68rem;color:var(--muted);font-weight:900;text-transform:uppercase;padding:7px 10px 3px 13px}.nav-option{margin-top:5px}.nav-option+.nav-option{border-top:1px dashed var(--line);padding-top:7px}.nav-option-title{padding:5px 9px 3px 18px;color:#35393d;font-size:.7rem;font-weight:800;line-height:1.35}.nav-option-title.alternative{color:var(--orange-dark)}.nav-option-title .option-kind{display:block;margin-bottom:2px;font-size:.59rem;letter-spacing:.08em;text-transform:uppercase}.section-nav .nav-sub{font-size:.78rem;font-weight:600;padding:7px 10px 7px 22px}.section-nav .nav-choice-group .nav-option .nav-sub{padding-left:28px}.sidebar-hint{border-top:1px solid var(--line);margin-top:14px;padding:14px 4px 2px;color:var(--muted);font-size:.75rem;line-height:1.55}
 .workspace-head,.form-section{background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 5px 20px rgba(20,23,26,.045)}.workspace-head{padding:27px 30px;margin-bottom:18px;border-left:5px solid var(--orange);display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.workspace-head h1{font-size:1.8rem;line-height:1.2;margin:4px 0 8px;font-weight:800}.workspace-head p{margin:0;color:var(--muted);line-height:1.6;max-width:790px}.eyebrow,.title{font-size:.69rem;text-transform:uppercase;color:var(--orange-dark);font-weight:900;letter-spacing:.11em}.form-section{padding:28px 30px;margin-bottom:18px;scroll-margin-top:108px}.section-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}.section-heading h2{font-size:1.25rem;margin:4px 0 0;font-weight:800}.section-heading p{margin:5px 0 0;color:var(--muted);font-size:.85rem;line-height:1.55}.section-number{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:29px;background:var(--orange);color:var(--dark);border-radius:4px;font-size:.74rem;font-weight:900}
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 20px}label{display:block;font-size:.81rem;font-weight:700;margin-bottom:8px;color:#2f3339}input,textarea,select{width:100%;min-height:50px;padding:13px 14px;border:1px solid #c9c6c2;border-radius:6px;background:#fff;color:var(--text);font:inherit;font-size:.97rem;line-height:1.4;transition:border-color .15s,box-shadow .15s}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,106,6,.18)}textarea{min-height:132px;resize:vertical}.hint{font-size:.78rem;color:var(--muted);line-height:1.55;margin-top:8px}.internal{display:inline-flex;align-items:center;background:#fff;color:#3b3e42;border:1px solid var(--orange);border-radius:4px;padding:2px 6px;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.internal-note{margin-top:14px;padding:13px 15px;border-left:4px solid var(--orange);border-radius:4px;background:#fff7f1;color:#49382e;font-size:.81rem;line-height:1.55}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 20px}.span2{grid-column:1/-1}label{display:block;font-size:.81rem;font-weight:700;margin-bottom:8px;color:#2f3339}input,textarea,select{width:100%;min-height:50px;padding:13px 14px;border:1px solid #c9c6c2;border-radius:6px;background:#fff;color:var(--text);font:inherit;font-size:.97rem;line-height:1.4;transition:border-color .15s,box-shadow .15s}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,106,6,.18)}textarea{min-height:132px;resize:vertical}.hint{font-size:.78rem;color:var(--muted);line-height:1.55;margin-top:8px}.internal{display:inline-flex;align-items:center;background:#fff;color:#3b3e42;border:1px solid var(--orange);border-radius:4px;padding:2px 6px;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.internal-note{margin-top:14px;padding:13px 15px;border-left:4px solid var(--orange);border-radius:4px;background:#fff7f1;color:#49382e;font-size:.81rem;line-height:1.55}.stock-preview{margin-top:9px}.stock-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 9px;border:1px solid;border-radius:999px;font-size:.71rem;font-weight:800;line-height:1.2;white-space:nowrap}.stock-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 2px rgba(255,255,255,.7)}.stock-good{color:#115c35;background:#eaf7f0;border-color:#9bd4b5}.stock-warn{color:#704b00;background:#fff7dc;border-color:#e6c76d}.stock-bad{color:#8c2525;background:#fff0f0;border-color:#e3a4a4}
 .btn{border:0;border-radius:6px;min-height:42px;padding:10px 15px;font-family:inherit;font-weight:700;font-size:.86rem;cursor:pointer;transition:transform .12s,background .12s,box-shadow .12s}.btn:hover{transform:translateY(-1px)}.btn:focus-visible{outline:3px solid rgba(255,106,6,.3);outline-offset:2px}.primary{background:var(--orange);color:var(--dark)}.primary:hover{background:var(--orange-dark)}.secondary{background:#eceae7;color:#252930}.danger{background:#fff1ef;color:var(--danger)}.outline{background:#fff;border:1px solid #c9c6c2;color:#252930}.dark-btn{background:#24272d;color:#fff}.header-preview{min-height:42px;padding:10px 17px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.savebox{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:18px}.save-row{display:grid;grid-template-columns:minmax(280px,1fr) auto auto;gap:10px;align-items:end}.save-status{font-size:.77rem;color:var(--good);font-weight:700;margin-top:9px;min-height:18px}
-.item{border:1px solid #cac6c1;border-radius:8px;margin-top:20px;overflow:hidden;background:#fff;scroll-margin-top:108px}.item:first-child{margin-top:0}.item-head{background:var(--dark);color:#fff;padding:15px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:3px solid var(--orange)}.item-head-meta{display:flex;align-items:center;gap:11px}.item-chip{background:var(--orange);color:var(--dark);border-radius:4px;padding:5px 8px;font-size:.67rem;font-weight:900;letter-spacing:.05em}.item-body{padding:0 22px 24px}.item-section{padding:24px 2px;border-top:1px solid #e4e1dd;scroll-margin-top:108px}.item-section:first-child{border-top:0}.subheading{margin-bottom:18px}.subheading h3{font-size:1.02rem;margin:0 0 5px;font-weight:800}.subheading p{font-size:.79rem;color:var(--muted);line-height:1.5;margin:0}.upload-box{display:block;border:2px dashed #c5c1bc;border-radius:6px;padding:20px;background:var(--soft);cursor:pointer}.upload-box:hover{border-color:var(--orange);background:var(--orange-soft)}.upload-title{display:block;font-size:.93rem;font-weight:800;margin-bottom:4px}.upload-box input{margin-top:14px;background:#fff}.extra-row{display:grid;grid-template-columns:minmax(260px,1fr) 80px 135px 135px 44px;gap:10px;align-items:end;margin-top:10px;padding:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px}.mini{font-size:.68rem;color:var(--muted);font-weight:800;margin-bottom:6px}.readonly{background:#efeeec}.calc{margin-top:16px;background:var(--dark);color:#fff;border-radius:6px;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:9px 16px}.calc .total{font-weight:900;border-top:1px solid #3c4149;padding-top:11px;margin-top:2px}.calc .total:last-child{color:var(--orange)}.build-total{font-size:1.05rem}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}.gallery img{width:100%;height:130px;object-fit:cover;border-radius:5px;border:1px solid var(--line)}.empty{color:var(--muted);font-size:.81rem;border:1px dashed #c6c2bd;padding:13px;border-radius:5px;margin-top:10px}
-.preview-modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(9,11,14,.86);overflow:auto;padding:24px}.preview-modal.open{display:block}.preview-shell{width:min(980px,100%);margin:auto}.preview-toolbar{position:sticky;top:0;z-index:3;background:#fff;border-radius:7px;margin-bottom:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:var(--shadow)}.preview-toolbar strong{display:block}.preview-toolbar small{color:var(--muted)}.preview-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.preview{background:#fff;border:1px solid var(--line);border-radius:7px;overflow:hidden;box-shadow:var(--shadow);print-color-adjust:exact;-webkit-print-color-adjust:exact}.quote-head{background:var(--dark);color:#fff;padding:24px 30px;display:flex;justify-content:space-between;align-items:center;gap:24px;border-bottom:5px solid var(--orange)}.quote-logo{display:block;width:auto;height:62px}.quote-ref{text-align:right;font-size:.75rem;line-height:1.6}.quote-ref strong{display:block;color:var(--orange);font-size:.76rem;letter-spacing:.08em;margin-bottom:2px}.quote-body{padding:28px 32px}.vehicle{font-size:1.55rem;font-weight:900;margin:5px 0 18px}.muted{color:var(--muted);font-size:.8rem}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{background:var(--orange-soft);color:#32271f;border-radius:4px;padding:6px 9px;font-size:.73rem;font-weight:700}.product{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:18px}.product .pics{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#eee}.product .pics img{width:100%;height:210px;object-fit:cover}.pc{padding:18px}.pc h3{font-weight:800}.desc{line-height:1.55}.features{padding-left:18px;line-height:1.55}.table{margin-top:16px;border-top:1px solid var(--line)}.tr,.th{display:grid;grid-template-columns:1fr 60px 115px;gap:10px;padding:10px 0;border-top:1px solid #ece9e5;align-items:center}.th{border-top:0;color:var(--muted);font-size:.68rem;font-weight:800;text-transform:uppercase}.amt{text-align:right;font-weight:700}.qty{text-align:center}.fit{display:flex;justify-content:space-between;border-top:3px solid var(--orange);padding-top:13px;margin-top:5px;font-size:1.1rem;font-weight:900}.grand{margin-top:22px;background:var(--dark);color:#fff;padding:16px 18px;border-radius:6px;display:flex;justify-content:space-between;font-weight:900}.grand span:last-child{color:var(--orange)}.email-panel{margin:14px 0 40px;background:#fff;border-radius:7px;padding:16px 18px;box-shadow:var(--shadow)}.email-panel summary{font-weight:800;cursor:pointer}.email{margin-top:14px;padding:16px;background:var(--soft);border:1px solid var(--line);border-radius:6px;white-space:pre-wrap;line-height:1.55;font-size:.86rem}
+.item{border:1px solid #cac6c1;border-radius:8px;margin-top:20px;overflow:hidden;background:#fff;scroll-margin-top:108px}.item:first-child{margin-top:0}.item-head{background:var(--dark);color:#fff;padding:15px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:3px solid var(--orange)}.item-head-meta{display:flex;align-items:center;gap:11px}.item-chip{background:var(--orange);color:var(--dark);border-radius:4px;padding:5px 8px;font-size:.67rem;font-weight:900;letter-spacing:.05em}.item-body{padding:0 22px 24px}.item-section{padding:24px 2px;border-top:1px solid #e4e1dd;scroll-margin-top:108px}.item-section:first-child{border-top:0}.subheading{margin-bottom:18px}.subheading h3{font-size:1.02rem;margin:0 0 5px;font-weight:800}.subheading p{font-size:.79rem;color:var(--muted);line-height:1.5;margin:0}.upload-box{display:block;border:2px dashed #c5c1bc;border-radius:6px;padding:20px;background:var(--soft);cursor:pointer}.upload-box:hover{border-color:var(--orange);background:var(--orange-soft)}.upload-title{display:block;font-size:.93rem;font-weight:800;margin-bottom:4px}.upload-box input{margin-top:14px;background:#fff}.extra-row{display:grid;grid-template-columns:minmax(260px,1fr) 80px 135px 135px 44px;gap:10px;align-items:end;margin-top:10px;padding:12px;background:var(--soft);border:1px solid var(--line);border-radius:6px}.mini{font-size:.68rem;color:var(--muted);font-weight:800;margin-bottom:6px}.readonly{background:#efeeec}.calc{margin-top:16px;background:var(--dark);color:#fff;border-radius:6px;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:9px 16px}.calc .total{font-weight:900;border-top:1px solid #3c4149;padding-top:11px;margin-top:2px}.calc .total:last-child{color:var(--orange)}.build-total{font-size:1.05rem}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}.image-tile{position:relative}.gallery img{display:block;width:100%;height:130px;object-fit:cover;border-radius:5px;border:1px solid var(--line)}.image-remove{position:absolute;top:8px;right:8px;min-height:32px;padding:6px 9px;border:1px solid rgba(255,255,255,.7);border-radius:4px;background:#000;color:#fff;font:inherit;font-size:.68rem;font-weight:800;cursor:pointer}.image-remove:hover{background:var(--danger)}.image-remove:focus-visible{outline:3px solid rgba(255,106,6,.45);outline-offset:2px}.empty{color:var(--muted);font-size:.81rem;border:1px dashed #c6c2bd;padding:13px;border-radius:5px;margin-top:10px}
+.preview-modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(9,11,14,.86);overflow:auto;padding:24px}.preview-modal.open{display:block}.preview-shell{width:min(980px,100%);margin:auto}.preview-toolbar{position:sticky;top:0;z-index:3;background:#fff;border-radius:7px;margin-bottom:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:var(--shadow)}.preview-toolbar strong{display:block}.preview-toolbar small{color:var(--muted)}.preview-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.preview{background:#fff;border:1px solid var(--line);border-radius:7px;overflow:hidden;box-shadow:var(--shadow);print-color-adjust:exact;-webkit-print-color-adjust:exact}.quote-head{background:var(--dark);color:#fff;padding:24px 30px;display:flex;justify-content:space-between;align-items:center;gap:24px;border-bottom:5px solid var(--orange)}.quote-logo{display:block;width:auto;height:62px}.quote-ref{text-align:right;font-size:.75rem;line-height:1.6;font-weight:700}.quote-body{padding:28px 32px}.vehicle{font-size:1.55rem;font-weight:900;margin:5px 0 18px}.muted{color:var(--muted);font-size:.8rem}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{background:var(--orange-soft);color:#32271f;border-radius:4px;padding:6px 9px;font-size:.73rem;font-weight:700}.product{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:18px}.product .pics{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#eee}.product .pics img{width:100%;height:210px;object-fit:cover}.pc{padding:18px}.pc h3{font-weight:800}.desc{line-height:1.55}.features{padding-left:18px;line-height:1.55}.table{margin-top:16px;border-top:1px solid var(--line)}.tr,.th{display:grid;grid-template-columns:1fr 60px 115px;gap:10px;padding:10px 0;border-top:1px solid #ece9e5;align-items:center}.th{border-top:0;color:var(--muted);font-size:.68rem;font-weight:800;text-transform:uppercase}.amt{text-align:right;font-weight:700}.qty{text-align:center}.fit{display:flex;justify-content:space-between;border-top:3px solid var(--orange);padding-top:13px;margin-top:5px;font-size:1.1rem;font-weight:900}.product-availability{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:14px;font-size:.81rem}.expected-wait{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-top:9px;font-size:.81rem}.expected-wait strong{white-space:nowrap}.comparisons{margin-top:30px}.comparisons-intro{margin-bottom:14px}.comparisons-intro h2{margin:4px 0 6px;font-size:1.25rem}.comparisons-intro p{margin:0;color:var(--muted);font-size:.82rem;line-height:1.5}.comparison{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:14px;break-inside:avoid}.comparison-title{padding:14px 16px;background:var(--soft);border-bottom:1px solid var(--line);font-size:1rem;font-weight:900}.comparison-scroll{overflow-x:auto}.comparison-table{width:100%;min-width:calc(165px + (var(--option-count) * 190px));border-collapse:collapse;text-align:left}.comparison-table th,.comparison-table td{padding:12px 13px;border-bottom:1px solid #ece9e5;vertical-align:top}.comparison-table tr:last-child th,.comparison-table tr:last-child td{border-bottom:0}.comparison-table thead th{background:#fff;font-size:.73rem}.comparison-table thead th:first-child{width:150px}.comparison-table tbody th{color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase}.comparison-table td{font-size:.81rem}.comparison-table .price-cell{font-size:1rem;font-weight:900}.compare-kind{display:block;color:var(--orange-dark);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}.grand{margin-top:22px;background:var(--dark);color:#fff;padding:16px 18px;border-radius:6px;display:flex;justify-content:space-between;font-weight:900}.grand span:last-child{color:var(--orange)}.grand-note{margin:9px 2px 0;color:var(--muted);font-size:.78rem;line-height:1.5}.email-panel{margin:14px 0 40px;background:#fff;border-radius:7px;padding:16px 18px;box-shadow:var(--shadow)}.email-panel summary{font-weight:800;cursor:pointer}.email{margin-top:14px;padding:16px;background:var(--soft);border:1px solid var(--line);border-radius:6px;white-space:pre-wrap;line-height:1.55;font-size:.86rem}
 @media(max-width:1050px){.app{grid-template-columns:205px minmax(0,1fr);padding:20px;gap:18px}.form-section,.workspace-head{padding:24px}.extra-row{grid-template-columns:minmax(210px,1fr) 70px 115px 115px 42px}}
-@media(max-width:820px){.header-inner{padding:10px 16px}.brand-logo{height:52px}.builder-label{padding-left:15px}.app{grid-template-columns:1fr;padding:14px}.sidebar{position:static;max-height:none}.section-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.nav-product{display:none}.sidebar-hint{display:none}.workspace-head{padding:22px}.grid2,.grid3{grid-template-columns:1fr}.save-row{grid-template-columns:1fr auto auto}.extra-row{grid-template-columns:1fr 1fr}.extra-row>div:first-child{grid-column:1/-1}.extra-row .removeX{grid-column:2;justify-self:end}.preview-modal{padding:10px}.preview-toolbar{align-items:flex-start}.preview-actions{justify-content:flex-start}.quote-body{padding:22px 18px}}
+@media(max-width:820px){.header-inner{padding:10px 16px}.brand-logo{height:52px}.builder-label{padding-left:15px}.app{grid-template-columns:1fr;padding:14px}.sidebar{position:static;max-height:none}.section-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}#productNav{grid-column:1/-1;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,72vw);gap:10px;overflow-x:auto;padding:4px 0 8px;scroll-snap-type:x proximity}#productNav .nav-product{display:block;border:1px solid var(--line);border-radius:6px;padding:8px;margin:4px 0;scroll-snap-align:start}.sidebar-hint{display:none}.workspace-head{padding:22px}.grid2,.grid3{grid-template-columns:1fr}.save-row{grid-template-columns:1fr auto auto}.extra-row{grid-template-columns:1fr 1fr}.extra-row>div:first-child{grid-column:1/-1}.extra-row .removeX{grid-column:2;justify-self:end}.preview-modal{padding:10px}.preview-toolbar{align-items:flex-start}.preview-actions{justify-content:flex-start}.quote-body{padding:22px 18px}}
 @media(max-width:560px){.header-inner{gap:10px}.brand-lockup{gap:10px}.brand-logo{height:40px}.builder-label{border-left:0;padding-left:0}.builder-label strong{font-size:.72rem}.builder-label span{display:none}.header-preview{min-height:38px;padding:8px 10px;font-size:.7rem}.app{padding:9px}.workspace-head,.form-section{padding:19px 16px;border-radius:6px}.workspace-head{display:block}.section-nav{grid-template-columns:1fr}.save-row{grid-template-columns:1fr}.item-body{padding:0 14px 18px}.item-head{padding:13px}.preview-toolbar{position:static;display:block}.preview-actions{margin-top:10px}.quote-head{padding:19px 18px}.quote-logo{height:44px}.quote-ref{font-size:.65rem}.quote-ref strong{font-size:.66rem}.tr,.th{grid-template-columns:1fr 44px 95px}.product .pics img{height:160px}}
-@media print{body{background:#fff}.app-header,.app,.preview-toolbar,.email-panel{display:none!important}.preview-modal{display:block!important;position:static!important;background:none!important;padding:0!important;overflow:visible!important}.preview-shell{width:auto!important;max-width:none!important;margin:0!important}.preview{display:block!important;border:0!important;border-radius:0!important;box-shadow:none!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}.product{break-inside:auto}.tr,.fit{break-inside:avoid}@page{margin:12mm}}
+@media print{body{background:#fff}.app-header,.app,.preview-toolbar,.email-panel{display:none!important}.preview-modal{display:block!important;position:static!important;background:none!important;padding:0!important;overflow:visible!important}.preview-shell{width:auto!important;max-width:none!important;margin:0!important}.preview{display:block!important;border:0!important;border-radius:0!important;box-shadow:none!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}.product{break-inside:auto}.tr,.fit{break-inside:avoid}.comparison{break-inside:avoid}.comparison-scroll{overflow:visible}.comparison-table{min-width:0!important;table-layout:fixed}.comparison-table th,.comparison-table td{padding:8px 6px;font-size:.67rem;overflow-wrap:anywhere}.comparison-table thead th:first-child{width:105px}@page{margin:12mm}}
 </style>
 </head>
 <body>
@@ -102,7 +102,8 @@ Snorkel</textarea>
 
   <section class="form-section" id="totals-section">
     <div class="section-heading"><div><div class="title">Review</div><h2>Quote total</h2><p>Review the included total, then open the customer view before printing or saving the PDF.</p></div><span class="section-number">06</span></div>
-    <div class="calc build-total"><span>Included quote total</span><strong id="buildGrand">$0.00</strong></div>
+    <div class="calc build-total"><span>Quote total · included selections</span><strong id="buildGrand">$0.00</strong></div>
+    <p class="grand-note" id="buildGrandNote" hidden>Alternative options are shown for comparison and are not included in this total.</p>
     <div class="actions"><button class="btn primary" id="openPreviewBottom" type="button">Preview customer quote</button><button class="btn secondary" id="copyEmail" type="button">Copy email reply</button></div>
   </section>
 </main>
@@ -115,13 +116,15 @@ Snorkel</textarea>
       <div class="preview-actions"><button class="btn primary" id="printQuote" type="button">Print / Save PDF</button><button class="btn secondary" id="copyEmailPreview" type="button">Copy email reply</button><button class="btn outline" id="closePreview" type="button">Close preview</button></div>
     </div>
     <section class="preview" id="quotePreview">
-      <div class="quote-head"><img class="quote-logo" src="https://www.complete4x4.au/wp-content/uploads/2022/12/Larger-logo_325x122_acf_cropped.png" alt="Complete 4x4"><div class="quote-ref"><strong>Vehicle upgrade quote</strong><span id="pDate"></span><br><span id="pJob"></span></div></div>
+      <div class="quote-head"><img class="quote-logo" src="https://www.complete4x4.au/wp-content/uploads/2022/12/Larger-logo_325x122_acf_cropped.png" alt="Complete 4x4"><div class="quote-ref"><span id="pDate"></span></div></div>
       <div class="quote-body">
         <div class="muted">PREPARED FOR <strong id="pName"></strong></div>
         <div class="vehicle" id="pVehicle"></div>
         <div class="chips" id="pRequested"></div>
         <div id="quoteItems"></div>
-        <div class="grand"><span>Total fitted · included items</span><span id="pGrand">$0.00</span></div>
+        <div id="optionComparisons"></div>
+        <div class="grand"><span>Quote total · included selections</span><span id="pGrand">$0.00</span></div>
+        <p class="grand-note" id="pGrandNote" hidden>Alternative options are shown for comparison and are not included in this total.</p>
       </div>
     </section>
     <details class="email-panel"><summary>Email wording · not included in PDF</summary><div class="email" id="email"></div></details>
@@ -129,7 +132,7 @@ Snorkel</textarea>
 </div>
 
 <template id="itemTpl"><div class="item"><div class="item-head"><div class="item-head-meta"><span class="item-chip">PRODUCT</span><b class="itemNo">Quote item</b></div><button class="btn danger removeItem" type="button">Remove</button></div><div class="item-body">
-<div class="item-section" data-anchor="details"><div class="subheading"><h3>Product details</h3><p>Identify the product or package and how it should be included in the quote.</p></div><div class="grid2"><div><label>Requested item / category</label><input data-f="category"></div><div><label>Use as</label><select data-f="role"><option value="included">Included in main quote</option><option value="alternative">Alternative option</option></select></div><div><label>Brand</label><input data-f="brand"></div><div><label>Product / package name</label><input data-f="product"></div><div><label>SKU / Part No.</label><input data-f="sku"></div><div><label>Availability</label><select data-f="stock"><option>Check stock</option><option>In stock</option><option>Low stock</option><option>Out of stock</option><option>Order required</option></select></div></div></div>
+<div class="item-section" data-anchor="details"><div class="subheading"><h3>Product details</h3><p>Identify the product or package and how it should be included in the quote.</p></div><div class="grid2"><div><label>Requested item / category</label><input data-f="category"></div><div><label>Use as</label><select data-f="role"><option value="included">Included in main quote</option><option value="alternative">Alternative option</option></select></div><div><label>Brand</label><input data-f="brand"></div><div><label>Product / package name</label><input data-f="product"></div><div><label>SKU / Part No.</label><input data-f="sku"></div><div><label>Availability</label><select data-f="stock" aria-label="Availability"><option>Check stock</option><option>In stock</option><option>Low stock</option><option>Out of stock</option><option>Order required</option></select><div class="stock-preview" data-stock-preview></div></div><div class="span2"><label>Expected waiting time <span class="internal">Optional</span></label><input data-f="expectedWait" aria-label="Expected waiting time" placeholder="e.g. Approximately 2–3 weeks"><div class="hint">Shown on the customer quote only when completed.</div></div></div></div>
 <div class="item-section" data-anchor="description"><div class="subheading"><h3>Description & features</h3><p>Add the fitment details and customer-facing information that explains the product clearly.</p></div><div><label>Compatibility</label><input data-f="compat"></div><div style="margin-top:18px"><label>Description</label><textarea data-f="desc"></textarea></div><div style="margin-top:18px"><label>Features / notes · one per line</label><textarea data-f="features"></textarea></div></div>
 <div class="item-section" data-anchor="images"><div class="subheading"><h3>Product pictures</h3><p>Upload one or more pictures. Images are compressed before the quote is saved in this browser.</p></div><label class="upload-box"><span class="upload-title">Choose product pictures</span><span class="hint">Select multiple images if needed. They will appear in the customer quote preview.</span><input class="images" type="file" accept="image/*" multiple></label><div class="gallery editGallery"></div></div>
 <div class="item-section" data-anchor="pricing"><div class="subheading"><h3>Product, freight & installation</h3><p>Enter the main retail price and any freight or installation charges for this package.</p></div><div class="grid2"><div><label>Main product retail</label><input data-f="retail" type="number" min="0" step=".01"></div><div><label>Freight for this main item / package</label><input data-f="freight" type="number" min="0" step=".01"></div><div><label>Recommended install hours <span class="internal">Internal only</span></label><input data-f="hours" type="number" min="0" step=".25"></div><div><label>Installation price override</label><input data-f="installOverride" type="number" min="0" step=".01" placeholder="Calculated automatically"></div></div><div class="hint">Freight is entered once for the main product or package. Installation hours remain internal; customers only see the installation price.</div></div>
@@ -141,7 +144,7 @@ Snorkel</textarea>
 const $=id=>document.getElementById(id),money=n=>new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(Number(n||0));
 const STORAGE_KEY='complete4x4_saved_quotes_v1';
 let count=0;
-let sectionObserver=null,previewReturnFocus=null;
+let sectionObserver=null,previewReturnFocus=null,productNavSignature='';
 
 function todayLocal(){const d=new Date(),off=d.getTimezoneOffset();return new Date(d.getTime()-off*60000).toISOString().slice(0,10)}
 function displayDate(v){if(!v)return'';const [y,m,d]=v.split('-').map(Number);return new Date(y,m-1,d).toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})}
@@ -151,17 +154,47 @@ function name(){return[$('first').value.trim(),$('surname').value.trim()].filter
 function req(){return $('requested').value.split(/\n|,/).map(x=>x.trim()).filter(Boolean)}
 function qty(n){return Number.isInteger(Number(n))?String(Number(n)):String(Number(n).toFixed(2))}
 function vehicleText(){return[$('year').value,$('make').value,$('model').value,$('variant').value].map(x=>x.trim()).filter(Boolean).join(' ')}
-
-function renderProductNav(){
-  const cards=[...document.querySelectorAll('.item')];
-  $('productNav').innerHTML=cards.map((card,i)=>{
-    const n=i+1;
-    return`<div class="nav-product"><div class="nav-product-title" id="nav-product-label-${n}">Item ${n}</div><a class="nav-sub" href="#item-${n}-details">Product details</a><a class="nav-sub" href="#item-${n}-description">Description & features</a><a class="nav-sub" href="#item-${n}-images">Pictures</a><a class="nav-sub" href="#item-${n}-pricing">Pricing & installation</a><a class="nav-sub" href="#item-${n}-required">Required items</a><a class="nav-sub" href="#item-${n}-summary">Item total</a></div>`
-  }).join('');
-  setupSectionObserver();refreshProductNavLabels(cards)
+function categoryKey(value){return String(value||'').trim().replace(/\s+/g,' ').toLowerCase()}
+function productTitle(item,fallback='Product option'){
+  const brand=String(item.brand||'').trim(),product=String(item.product||'').trim();
+  if(brand&&product&&!product.toLowerCase().startsWith(brand.toLowerCase()))return`${brand} ${product}`;
+  return product||brand||String(item.category||'').trim()||fallback
 }
-function refreshProductNavLabels(cards=[...document.querySelectorAll('.item')]){
-  cards.forEach((card,i)=>{const n=i+1,node=$(`nav-product-label-${n}`),label=val(card,'product')||val(card,'category')||`Item ${n}`;if(node)node.textContent=`${n} · ${label}`})
+function choiceGroups(items){
+  const entries=items.map((item,index)=>({item,index,key:categoryKey(item.category)}));
+  const groups=entries.filter(entry=>entry.item.role!=='alternative').map(entry=>({main:entry,alternatives:[],order:entry.index,orphan:false}));
+  const byCategory=new Map();
+  groups.forEach(group=>{if(!group.main.key)return;const matches=byCategory.get(group.main.key)||[];matches.push(group);byCategory.set(group.main.key,matches)});
+  entries.filter(entry=>entry.item.role==='alternative').forEach(alternative=>{
+    const matches=alternative.key?(byCategory.get(alternative.key)||[]):[];
+    const target=[...matches].reverse().find(group=>group.main.index<alternative.index)||matches[0];
+    if(target)target.alternatives.push(alternative);else groups.push({main:alternative,alternatives:[],order:alternative.index,orphan:true})
+  });
+  return groups.sort((a,b)=>a.order-b.order)
+}
+function comparisonGroups(items){return choiceGroups(items).filter(group=>!group.orphan&&group.alternatives.length)}
+function stockTone(stock){if(stock==='In stock')return'good';if(stock==='Out of stock')return'bad';return'warn'}
+function stockBadge(stock){const label=stock||'Check stock';return`<span class="stock-badge stock-${stockTone(label)}">${esc(label)}</span>`}
+function navLinks(index,extraClass=''){
+  const n=index+1,cls=`nav-sub${extraClass?` ${extraClass}`:''}`;
+  return`<a class="${cls}" href="#item-${n}-details">Product details</a><a class="${cls}" href="#item-${n}-description">Description & features</a><a class="${cls}" href="#item-${n}-images">Pictures</a><a class="${cls}" href="#item-${n}-pricing">Pricing & installation</a><a class="${cls}" href="#item-${n}-required">Required items</a><a class="${cls}" href="#item-${n}-summary">Item total</a>`
+}
+
+function renderProductNav(force=false){
+  const cards=[...document.querySelectorAll('.item')];
+  const items=cards.map(card=>({category:val(card,'category'),role:val(card,'role'),brand:val(card,'brand'),product:val(card,'product')}));
+  const signature=items.map((item,index)=>[index,item.category,item.role,item.brand,item.product].join('\u0001')).join('\u0002');
+  if(!force&&signature===productNavSignature)return;
+  productNavSignature=signature;
+  let visibleNumber=0;
+  $('productNav').innerHTML=choiceGroups(items).map(group=>{
+    const main=group.main,title=productTitle(main.item,`Item ${main.index+1}`);
+    if(group.orphan)return`<div class="nav-product"><div class="nav-product-title">Alternative · ${esc(title)}</div>${navLinks(main.index)}</div>`;
+    visibleNumber++;
+    const alternatives=group.alternatives.map((entry,index)=>`<div class="nav-option"><div class="nav-option-title alternative"><span class="option-kind">Alternative option ${index+1}</span>${esc(productTitle(entry.item,`Option ${index+1}`))}</div>${navLinks(entry.index)}</div>`).join('');
+    return`<div class="nav-product${alternatives?' nav-choice-group':''}"><div class="nav-product-title">${visibleNumber} · ${esc(title)}</div>${navLinks(main.index)}${alternatives}</div>`
+  }).join('');
+  setupSectionObserver()
 }
 function setupSectionObserver(){
   if(!('IntersectionObserver'in window))return;
@@ -181,7 +214,7 @@ function extraData(card){
 
 function data(card){
   const retail=Number(val(card,'retail')||0),freight=Number(val(card,'freight')||0),hours=Number(val(card,'hours')||0),labour=Number($('labour').value||0),override=val(card,'installOverride'),install=override!==''?Number(override||0):hours*labour,extras=extraData(card),extrasTotal=extras.reduce((s,x)=>s+x.total,0);
-  return{category:val(card,'category'),role:val(card,'role'),brand:val(card,'brand'),product:val(card,'product'),sku:val(card,'sku'),stock:val(card,'stock'),compat:val(card,'compat'),desc:val(card,'desc'),features:val(card,'features').split('\n').map(x=>x.trim()).filter(Boolean),retail,freight,hours,installOverride:override,install,extras,extrasTotal,total:retail+freight+install+extrasTotal,images:card._images||[]}
+  return{category:val(card,'category'),role:val(card,'role'),brand:val(card,'brand'),product:val(card,'product'),sku:val(card,'sku'),stock:val(card,'stock'),expectedWait:val(card,'expectedWait'),compat:val(card,'compat'),desc:val(card,'desc'),features:val(card,'features').split('\n').map(x=>x.trim()).filter(Boolean),retail,freight,hours,installOverride:override,install,extras,extrasTotal,total:retail+freight+install+extrasTotal,images:card._images||[]}
 }
 
 function addExtra(card,seed={}){
@@ -199,9 +232,9 @@ function emptyState(card){if(!card.querySelector('.extra-row'))card.querySelecto
 
 function addItem(seed={}){
   const f=$('itemTpl').content.cloneNode(true),card=f.querySelector('.item');
-  card._images=Array.isArray(seed.images)?seed.images:[];
+  card._images=Array.isArray(seed.images)?[...seed.images]:[];
   $('items').appendChild(card);count++;
-  const defaults={category:'',role:'included',brand:'',product:'',sku:'',stock:'Check stock',compat:'',desc:'',features:'',retail:'',freight:'',hours:'',installOverride:'',...seed};
+  const defaults={category:'',role:'included',brand:'',product:'',sku:'',stock:'Check stock',expectedWait:'',compat:'',desc:'',features:'',retail:'',freight:'',hours:'',installOverride:'',...seed};
   Object.entries(defaults).forEach(([k,v])=>{if(k==='extras'||k==='images'||k==='install'||k==='extrasTotal'||k==='total')return;const n=card.querySelector(`[data-f="${k}"]`);if(n)n.value=Array.isArray(v)?v.join('\n'):v});
   card.addEventListener('input',update);card.addEventListener('change',update);
   card.querySelector('.removeItem').onclick=()=>{if(document.querySelectorAll('.item').length>1){card.remove();renumber();update()}};
@@ -227,13 +260,47 @@ function fileData(file){
     reader.onerror=reject;reader.readAsDataURL(file)
   })
 }
-function renderEditGallery(card){card.querySelector('.editGallery').innerHTML=(card._images||[]).map(src=>`<img src="${src}">`).join('')}
+function renderEditGallery(card){
+  const gallery=card.querySelector('.editGallery');gallery.replaceChildren();
+  (card._images||[]).forEach((src,index)=>{
+    const tile=document.createElement('div'),img=document.createElement('img'),button=document.createElement('button');
+    tile.className='image-tile';img.src=src;img.alt=`Uploaded product picture ${index+1}`;
+    button.type='button';button.className='image-remove';button.textContent='Remove';button.setAttribute('aria-label',`Remove product picture ${index+1}`);
+    button.onclick=()=>{
+      card._images.splice(index,1);renderEditGallery(card);update();
+      const remaining=[...card.querySelectorAll('.image-remove')];(remaining[Math.min(index,remaining.length-1)]||card.querySelector('.images')).focus()
+    };
+    tile.append(img,button);gallery.appendChild(tile)
+  })
+}
+function labelItemCards(cards,items){
+  let visibleNumber=0;
+  choiceGroups(items).forEach(group=>{
+    const mainCard=cards[group.main.index];
+    if(group.orphan){
+      mainCard.querySelector('.itemNo').textContent='Alternative option';
+      mainCard.querySelector('.item-chip').textContent='ALTERNATIVE';
+      return
+    }
+    visibleNumber++;
+    mainCard.querySelector('.itemNo').textContent=`Quote item ${visibleNumber}`;
+    mainCard.querySelector('.item-chip').textContent='PRODUCT';
+    group.alternatives.forEach((entry,index)=>{
+      const alternativeCard=cards[entry.index];
+      alternativeCard.querySelector('.itemNo').textContent=`Alternative option ${index+1} · Quote item ${visibleNumber}`;
+      alternativeCard.querySelector('.item-chip').textContent='ALTERNATIVE'
+    })
+  })
+}
 function renumber(){
-  [...document.querySelectorAll('.item')].forEach((card,i)=>{
-    const n=i+1;card.querySelector('.itemNo').textContent=`Quote item ${n}`;
+  const cards=[...document.querySelectorAll('.item')];
+  cards.forEach((card,i)=>{
+    const n=i+1;
     card.querySelectorAll('[data-anchor]').forEach(section=>section.id=`item-${n}-${section.dataset.anchor}`)
   });
-  renderProductNav()
+  const items=cards.map(card=>({category:val(card,'category'),role:val(card,'role'),brand:val(card,'brand'),product:val(card,'product')}));
+  labelItemCards(cards,items);
+  renderProductNav(true)
 }
 
 function lineTable(i,title){
@@ -242,29 +309,47 @@ function lineTable(i,title){
 }
 
 function productHtml(i){
-  const title=[i.brand,i.product].filter(Boolean).join(' ')||'Product option',pics=i.images.length?`<div class="pics">${i.images.slice(0,6).map(s=>`<img src="${s}">`).join('')}</div>`:'';
-  return`<div class="product">${pics}<div class="pc"><div class="chips"><span class="chip">${esc(i.category||'Product')}</span>${i.role==='alternative'?'<span class="chip">Alternative option</span>':''}</div><h3>${esc(title)}</h3><div class="muted">SKU: ${esc(i.sku||'To be confirmed')}${i.compat?` · ${esc(i.compat)}`:''}</div>${i.desc?`<p class="desc">${esc(i.desc)}</p>`:''}${i.features.length?`<ul class="features">${i.features.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}${lineTable(i,title)}<p style="font-size:.82rem">Availability: <b>${esc(i.stock)}</b></p></div></div>`
+  const title=productTitle(i),pics=i.images.length?`<div class="pics">${i.images.slice(0,6).map((s,index)=>`<img src="${s}" alt="${esc(title)} picture ${index+1}">`).join('')}</div>`:'';
+  const wait=i.expectedWait?`<div class="expected-wait"><strong>Expected waiting time</strong><span>${esc(i.expectedWait)}</span></div>`:'';
+  return`<div class="product">${pics}<div class="pc"><div class="chips"><span class="chip">${esc(i.category||'Product')}</span>${i.role==='alternative'?'<span class="chip">Alternative option</span>':''}</div><h3>${esc(title)}</h3><div class="muted">SKU: ${esc(i.sku||'To be confirmed')}${i.compat?` · ${esc(i.compat)}`:''}</div>${i.desc?`<p class="desc">${esc(i.desc)}</p>`:''}${i.features.length?`<ul class="features">${i.features.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}${lineTable(i,title)}<div class="product-availability"><strong>Availability</strong>${stockBadge(i.stock)}</div>${wait}</div></div>`
+}
+
+function comparisonHtml(items){
+  const groups=comparisonGroups(items);
+  if(!groups.length)return'';
+  const sections=groups.map(group=>{
+    const options=[group.main,...group.alternatives],showWait=options.some(entry=>String(entry.item.expectedWait||'').trim());
+    const heads=options.map((entry,index)=>`<th><span class="compare-kind">${index===0?'Included option':`Alternative ${index}`}</span>${esc(productTitle(entry.item,`Option ${index+1}`))}</th>`).join('');
+    const products=options.map(entry=>`<td>${esc(productTitle(entry.item))}</td>`).join('');
+    const availability=options.map(entry=>`<td>${stockBadge(entry.item.stock)}</td>`).join('');
+    const waits=showWait?`<tr><th>Expected waiting time</th>${options.map(entry=>`<td>${entry.item.expectedWait?esc(entry.item.expectedWait):''}</td>`).join('')}</tr>`:'';
+    const prices=options.map(entry=>`<td class="price-cell">${money(entry.item.total)}</td>`).join('');
+    return`<section class="comparison"><div class="comparison-title">${esc(group.main.item.category||'Product')} options</div><div class="comparison-scroll"><table class="comparison-table" style="--option-count:${options.length}"><thead><tr><th></th>${heads}</tr></thead><tbody><tr><th>Product</th>${products}</tr><tr><th>Availability</th>${availability}</tr>${waits}<tr><th>Total fitted</th>${prices}</tr></tbody></table></div></section>`
+  }).join('');
+  return`<section class="comparisons"><div class="comparisons-intro"><div class="title">Options comparison</div><h2>Compare alternative options</h2><p>The included option is used in the quote total. Alternative options are provided for comparison and are not included unless selected.</p></div>${sections}</section>`
 }
 
 function emailText(items,grand){
   const vehicle=vehicleText(),main=items.filter(x=>x.role==='included'),alts=items.filter(x=>x.role==='alternative');
   let out=`Hi ${$('first').value.trim()||'there'},\n\nThank you for your enquiry${vehicle?` for your ${vehicle}`:''}.\n\n`;
   main.forEach((i,n)=>{const title=[i.brand,i.product].filter(Boolean).join(' ')||`Option ${n+1}`;out+=`${n+1}. ${title}${i.category?` — ${i.category}`:''}\n`;if(i.desc)out+=i.desc+'\n';if(i.features.length)out+='Key features / notes:\n'+i.features.map(x=>'• '+x).join('\n')+'\n';if(i.retail)out+=`Product: ${money(i.retail)}\n`;if(i.extras.length){out+='Required items:\n';i.extras.forEach(x=>out+=`• ${x.description} × ${qty(x.qty)}: ${money(x.total)}\n`)}if(i.freight)out+=`Freight: ${money(i.freight)}\n`;if(i.install)out+=`Installation: ${money(i.install)}\n`;out+=`Total fitted: ${money(i.total)}\n\n`});
-  if(main.length>1)out+=`Total fitted for included items: ${money(grand)}\n\n`;
-  if(alts.length){out+='Alternative options:\n';alts.forEach(i=>{const title=[i.brand,i.product].filter(Boolean).join(' ')||'Alternative';out+=`${title}: ${money(i.total)} fitted\n`})}
+  if(main.length>1||alts.length)out+=`Quote total for included selections: ${money(grand)}\n\n`;
+  if(alts.length){out+='Alternative options are not included in the quote total.\nAlternative options:\n';alts.forEach(i=>{const title=productTitle(i,'Alternative');out+=`${title}: ${money(i.total)} fitted\n`})}
   out+='\nPlease let me know which option you prefer and we can confirm current availability and arrange installation.\n\nKind regards,\nComplete 4x4';
   return out
 }
 
 function update(){
   const cards=[...document.querySelectorAll('.item')],items=cards.map(data);
+  labelItemCards(cards,items);
   $('pName').textContent=name();$('pVehicle').textContent=vehicleText();
   $('pDate').textContent=displayDate($('quoteDate').value);
-  $('pJob').textContent=$('jobNo').value.trim()?`Job No. ${$('jobNo').value.trim()}`:'';
   $('pRequested').innerHTML=req().map(x=>`<span class="chip">${esc(x)}</span>`).join('');
-  cards.forEach((c,n)=>{const i=items[n];c.querySelector('[data-c="retail"]').textContent=money(i.retail);c.querySelector('[data-c="extras"]').textContent=money(i.extrasTotal);c.querySelector('[data-c="freight"]').textContent=money(i.freight);c.querySelector('[data-c="install"]').textContent=money(i.install);c.querySelector('[data-c="total"]').textContent=money(i.total)});
+  cards.forEach((c,n)=>{const i=items[n];c.querySelector('[data-c="retail"]').textContent=money(i.retail);c.querySelector('[data-c="extras"]').textContent=money(i.extrasTotal);c.querySelector('[data-c="freight"]').textContent=money(i.freight);c.querySelector('[data-c="install"]').textContent=money(i.install);c.querySelector('[data-c="total"]').textContent=money(i.total);c.querySelector('[data-stock-preview]').innerHTML=stockBadge(i.stock)});
   const grand=items.filter(x=>x.role==='included').reduce((s,x)=>s+x.total,0);
-  $('buildGrand').textContent=money(grand);$('pGrand').textContent=money(grand);$('quoteItems').innerHTML=items.map(productHtml).join('');$('email').textContent=emailText(items,grand);refreshProductNavLabels(cards);
+  const hasAlternatives=items.some(item=>item.role==='alternative');
+  const hasComparisons=comparisonGroups(items).length>0,alternativeNote=hasComparisons?'Alternative options are shown for comparison and are not included in this total.':'Alternative options are not included in this total.';
+  $('buildGrand').textContent=money(grand);$('pGrand').textContent=money(grand);$('quoteItems').innerHTML=items.map(productHtml).join('');$('optionComparisons').innerHTML=comparisonHtml(items);$('buildGrandNote').textContent=alternativeNote;$('pGrandNote').textContent=alternativeNote;$('buildGrandNote').hidden=!hasAlternatives;$('pGrandNote').hidden=!hasAlternatives;$('email').textContent=emailText(items,grand);renderProductNav();
   document.title=`Complete 4x4 Quote${$('jobNo').value.trim()?` - ${$('jobNo').value.trim()}`:''}`
 }
 
@@ -276,6 +361,12 @@ function closePreview(){
   $('previewModal').classList.remove('open');$('previewModal').setAttribute('aria-hidden','true');document.body.classList.remove('preview-open');
   if(previewReturnFocus&&typeof previewReturnFocus.focus==='function')previewReturnFocus.focus()
 }
+let printTitleBefore='';
+function restorePrintTitle(){if(printTitleBefore){document.title=printTitleBefore;printTitleBefore=''}}
+function printCustomerQuote(){
+  printTitleBefore=document.title;document.title='Complete 4x4 Quote';window.print();setTimeout(restorePrintTitle,1000)
+}
+window.addEventListener('afterprint',restorePrintTitle);
 async function copyEmailReply(button){
   try{await navigator.clipboard.writeText($('email').textContent);const old=button.textContent;button.textContent='Copied';setTimeout(()=>button.textContent=old,1000)}
   catch{alert('Please open the quote preview and copy the email wording manually.')}
@@ -323,7 +414,7 @@ function resetQuote(){
 
 ['first','surname','quoteDate','jobNo','rego','year','make','model','variant','labour','requested'].forEach(id=>$(id).addEventListener('input',update));
 $('addItem').onclick=()=>addItem({category:req()[0]||''});
-$('openPreview').onclick=openPreview;$('openPreviewBottom').onclick=openPreview;$('closePreview').onclick=closePreview;$('printQuote').onclick=()=>window.print();
+$('openPreview').onclick=openPreview;$('openPreviewBottom').onclick=openPreview;$('closePreview').onclick=closePreview;$('printQuote').onclick=printCustomerQuote;
 $('copyEmail').onclick=()=>copyEmailReply($('copyEmail'));$('copyEmailPreview').onclick=()=>copyEmailReply($('copyEmailPreview'));
 $('previewModal').addEventListener('click',e=>{if(e.target===$('previewModal'))closePreview()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('previewModal').classList.contains('open'))closePreview()});
@@ -333,4 +424,3 @@ $('quoteDate').value=todayLocal();refreshSavedQuotes();
 addItem({category:'Bull Bar',brand:'TJM',product:'Venturer Bull Bar',compat:'Ford Ranger / Everest range',desc:'Matt black textured steel bull bar designed to complement the vehicle while providing practical protection and integrated recovery capability.',features:'ADR / airbag compliant\nCompatible with OE safety systems\nRated recovery points\nWinch compatible'});
 </script>
 </body></html>
-
